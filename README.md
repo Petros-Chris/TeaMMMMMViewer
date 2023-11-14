@@ -1,5 +1,4 @@
-# This is porject for internet called TeaMMMMMViewer
-
+# This is project for internet called TeaMMMMMViewer
 
 
 <p align = "center"><b>What Project Is About:</b> </p>
@@ -28,6 +27,14 @@
 </p>
 
 <p align = "center"><b>WireFrames:</b> </p>
+
+![](HomePage.png)
+![](QuizPage.png)
+![](QuizPages.png)
+![](CatalogPage.png)
+![](CheckoutPage.png)
+![](BillingPage.png)
+
 
 
 
