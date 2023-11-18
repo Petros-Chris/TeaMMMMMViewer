@@ -28,12 +28,12 @@
 
 <p align = "center"><b>WireFrames:</b> </p>
 
-![](HomePage.png)
-![](QuizPage.png)
-![](QuizPages.png)
-![](CatalogPage.png)
-![](CheckoutPage.png)
-![](BillingPage.png)
+![](ReadME/HomePage.png)
+![](ReadME/QuizPage.png)
+![](ReadME/QuizPages.png)
+![](ReadME/CatalogPage.png)
+![](ReadME/CheckoutPage.png)
+![](ReadME/BillingPage.png)
 
 
 
