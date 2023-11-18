@@ -120,3 +120,17 @@ body {
 #darkModeButton:hover {
     opacity: 1;
 }
+
+#quizDefBox {
+    height: max-content;
+    padding-bottom: 20px;
+}
+
+#hardQuizBtn {
+    margin-bottom: 60px;
+}
+
+#quizdefImage {
+    height: 200px;
+    width: 200px;
+}
