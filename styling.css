@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.homePageBoxes {
+    text-align: center;
+    background-color: rgb(119, 212, 255);
+    width: 400px;
+    height: 320px;
+    position: relative;
+    border-radius: 20px;
+}
+
+#welcomeBox {
+    height: 320px;
+    margin-bottom: 20px;
+}
+
+#theWorldOfTeaBox {
+    text-align: left;
+    height: 360px;
+    width: 900px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.theWorldOfTea {
+    font-size: larger;
+}
+
+#quizTaker {
+    padding-top: 40px;
+}
+
+#quizButton {
+    padding: 10px;
+}
+
+#catalogueButton {
+    padding: 3px;
+    border-radius: 10px;
+    margin: 5px;
+}
