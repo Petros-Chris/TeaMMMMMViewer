@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!--Idk if we need these thingss-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Idk if we need these thingss-->
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styling.css">
+
+    <div id="lifeBox">
+        <p id="lifeText">Life:
+            <img id="lifeImage1" class="lifeImage" src=ALife.png>
+        </p>
+
+        <div id="navBox">
+            <a href="HomePage.html" class="navLink">Home</a>
+            <a href="yummy.html" class="navLink">Catalog</a>
+            <a href="QuizDeficultyPage.html" class="navLink">Quiz</a>
+            <a href="yummy.html" class="navLink">Checkout</a>
+        </div>
+    </div>
+
+    <div id="quizDefBox" class="homePageBoxes">
+        <h1>Question Goes Here</h1>
+
+        <button id="answer1" class="answerBtn" onclick="deleteImage()">
+            <h2>Not sure</h2>
+        </button>
+
+        <button id="answer2" class="answerBtn" onclick="deleteImage()">
+            <h2>how</h2>
+        </button> <br>
+
+        <button id="answer3" class="answerBtn" onclick="deleteImage()">
+            <h2>to program</h2>
+        </button>
+
+        <button id="answer4" class="answerBtn" onclick="deleteImage()">
+            <h2>this</h2>
+        </button> <br>
+
+        <p id="timer">Timer Start!</p>
+    </div>
+
+    <div id="darkModeButton" onclick="toggleDarkMode()">
+        <label>Toggle Dark Mode</label>
+        <input type="checkbox" id="darkCheckBox">
+    </div>
+
+    <script>
+        var duration = 10;
+        var timerInterval = setInterval(updateTheTimer, 1000);
+
+        function updateTheTimer() {
+            var timer = document.getElementById('timer');
+
+            timer.innerHTML = duration;
+
+            if (duration == 10) {
+                timer.style.color = "lightGreen";
+            }
+
+            if (duration == 6) {
+                timer.style.color = "orange";
+            }
+
+            if (duration == 3) {
+                timer.style.color = "red";
+            }
+
+            if (duration === 0) {
+                timer.style.color = "Gray";
+                timer.textContent = "Time's up!";
+                clearInterval(timerInterval);
+
+                setTimeout(function () {
+                    window.location.href = "HomePage.html";
+                }, 1000);
+            } else {
+                duration--;
+            }
+        }
+
+        function deleteImage() {
+            var lifeImageClass = document.getElementsByClassName("lifeImage");
+
+            var imageContainer = document.getElementById('lifeText');
+
+            imageContainer.removeChild(lifeImage1);
+            checkIfLivesExists();
+        }
+
+        function checkIfLivesExists() {
+            var lifeImage = document.getElementsByClassName("lifeImage");
+
+            if (lifeImage.length == 0) {
+                window.location.href = "HomePage.html";
+            }
+        }
+
+
+
+        function goToEasyQuiz() {
+
+        }
+
+        function goToHardQuiz() {
+
+        }
+
+        function toggleDarkMode() {
+            var isDarkMode = document.body.classList.contains('dark-mode');
+
+            //allows the switch
+            document.body.classList.toggle('dark-mode', !isDarkMode);
+
+            //This updates the checkbox depeing on if dark mode is on or off
+            var checkbox = document.getElementById('darkCheckBox');
+            checkbox.checked = !isDarkMode;
+            checkbox.disabled = isDarkMode;
+
+            //makes the toggle dark mode box dark
+            var darkbutton = document.getElementById("darkModeButton")
+            darkbutton.classList.toggle('dark-mode', !isDarkMode);
+
+            //makes the nav dark
+            var darknav = document.getElementById("lifeBox");
+            darknav.classList.toggle('dark-mode', !isDarkMode);
+
+            var darknav = document.getElementById("navBox");
+            darknav.classList.toggle('dark-mode', !isDarkMode);
+
+            // Toggle dark mode class on elements with the homePageBoxes class
+            var darkModeElements = document.querySelectorAll('.homePageBoxes');
+            darkModeElements.forEach(function (element) {
+                element.classList.toggle('dark-mode', !isDarkMode);
+            });
+            localStorage.setItem('darkMode', !isDarkMode);
+        }
+
+        //this makes the page dark if it was set to be dark on another page
+        document.addEventListener('DOMContentLoaded', function () {
+            var storedDarkMode = localStorage.getItem('darkMode');
+
+            if (storedDarkMode === 'true') {
+                toggleDarkMode();
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+</html>

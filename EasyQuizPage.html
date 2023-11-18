@@ -7,30 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Idk if we need these thingss-->
     <title>Home Page</title>
     <link rel="stylesheet" href="styling.css">
-    <div id="navBox">
-        <a href="HomePage.html" class="navLink">Home</a>
-        <a href="yummy.html" class="navLink">Catalog</a>
-        <a href="QuizDeficultyPage.html" class="navLink">Quiz</a>
-        <a href="yummy.html" class="navLink">Checkout</a>
+
+    <div id="lifeBox">
+        <p id="lifeText">Lives:
+            <img id="lifeImage1" class="lifeImage" src=ALife.png>
+            <img id="lifeImage2" class="lifeImage" src=ALife.png>
+            <img id="lifeImage3" class="lifeImage" src=ALife.png>
+        </p>
+
+        <div id="navBox">
+            <a href="HomePage.html" class="navLink">Home</a>
+            <a href="yummy.html" class="navLink">Catalog</a>
+            <a href="QuizDeficultyPage.html" class="navLink">Quiz</a>
+            <a href="yummy.html" class="navLink">Checkout</a>
+        </div>
     </div>
 
     <div id="quizDefBox" class="homePageBoxes">
-        <h1>What Quiz Difficulty Would You Like?</h1>
-        <button id="easyQuizBtn" onclick="goToEasyQuiz()">
-            <h2>Easy Mode</h2>Up To 5% Off
+        <h1>Question Goes Here</h1>
+
+        <button id="answer1" class="answerBtn" onclick="deleteImage()">
+            <h2>Not sure</h2>
         </button>
-        <button id="hardQuizBtn" onclick="goToHardQuiz()">
-            <h2>Hard Mode</h2>Up To 15% Off
+
+        <button id="answer2" class="answerBtn" onclick="deleteImage()">
+            <h2>how</h2>
         </button> <br>
 
-        <h2>How The Tea Quiz Works:</h2>
-        <p class="theWorldOfTea">When you begin the <b>easy version</b> of the quiz, you will start with 3 lives, and
-            not have a timer</p>
-        <p class="theWorldOfTea">When you begin the <b>hard version</b> of the quiz, you will only have one life,
-            and you will have a 10 second timer</p>
+        <button id="answer3" class="answerBtn" onclick="deleteImage()">
+            <h2>to program</h2>
+        </button>
 
-        <img id="quizdefImage" src="goodLuck.png" alt="To give the viewer confidence">
-
+        <button id="answer4" class="answerBtn" onclick="deleteImage()">
+            <h2>this</h2>
+        </button>
     </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
@@ -39,13 +49,29 @@
     </div>
 
     <script>
-        function goToEasyQuiz() {
-            window.location.href = "EasyQuizPage.html";
+
+        function deleteImage() {
+            var lifeImageClass = document.getElementsByClassName("lifeImage");
+
+            var imageContainer = document.getElementById('lifeText');
+            for (let i = lifeImageClass.length; i > 0; i--) {
+                var lifeImages = document.getElementById('lifeImage' + i);
+
+
+                imageContainer.removeChild(lifeImages);
+                checkIfLivesExists();
+                break;
+            }
         }
 
-        function goToHardQuiz() {
-            window.location.href = "HardQuizPage.html";
+        function checkIfLivesExists() {
+            var lifeImage = document.getElementsByClassName("lifeImage");
+
+            if (lifeImage.length == 0) {
+                window.location.href = "HomePage.html";
+            }
         }
+
 
         function toggleDarkMode() {
             var isDarkMode = document.body.classList.contains('dark-mode');
@@ -63,6 +89,9 @@
             darkbutton.classList.toggle('dark-mode', !isDarkMode);
 
             //makes the nav dark
+            var darknav = document.getElementById("lifeBox");
+            darknav.classList.toggle('dark-mode', !isDarkMode);
+
             var darknav = document.getElementById("navBox");
             darknav.classList.toggle('dark-mode', !isDarkMode);
 

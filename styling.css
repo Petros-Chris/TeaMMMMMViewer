@@ -41,8 +41,46 @@ body {
     height: max-content;
     width: max-content;
     opacity: 1;
-    text-align: left;
     border-radius: 20px;
+}
+
+.navLink {
+    margin-right: 90px;
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+#navBox.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.navLink:link {
+    color: green
+}
+
+#lifeBox {
+    background-color: rgb(252, 207, 149);
+    border-radius: 20px;
+    padding-left: 20px;
+}
+
+.lifeImage {
+    width: 20px;
+    height: 20px;
+}
+
+#lifeText {
+    font-size: x-large;
+    margin-bottom: 0;
+}
+
+#lifeBox.dark-mode {
+    background-color: #222;
+    color: #fff;
 }
 
 #welcomeBox {
@@ -72,24 +110,6 @@ body {
     padding: 3px;
     border-radius: 10px;
     margin: 5px;
-}
-
-.navLink {
-    margin-right: 90px;
-    margin-left: 90px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    font-size: x-large;
-}
-
-#navBox.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.navLink:link {
-    color: green
 }
 
 #takeTheQuiz {
@@ -124,6 +144,7 @@ body {
 #quizDefBox {
     height: max-content;
     padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 #hardQuizBtn {
@@ -133,4 +154,14 @@ body {
 #quizdefImage {
     height: 200px;
     width: 200px;
+}
+
+.answerBtn {
+    margin: 5px;
+    height: 100px;
+    width: 150px;
+}
+
+#timer {
+    font-size: larger;
 }
