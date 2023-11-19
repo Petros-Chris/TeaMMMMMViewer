@@ -12,16 +12,16 @@ body {
     text-align: center;
     background-color: antiquewhite;
     transition: background-color 0.5s ease;
-    width: 400px;
-    height: 320px;
+    width: 900px;
     position: relative;
     border-radius: 20px;
     opacity: 0.7;
-    transition: opacity 0.5s ease-in-out;
     margin-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
-
+    padding-bottom: 20px;
+    height: max-content;
+    transition: width 0.5s, opacity 0.5s ease-in-out;
 }
 
 .homePageBoxes.dark-mode {
@@ -42,6 +42,7 @@ body {
     width: max-content;
     opacity: 1;
     border-radius: 20px;
+    transition: width 0.5s;
 }
 
 .navLink {
@@ -83,15 +84,8 @@ body {
     color: #fff;
 }
 
-#welcomeBox {
-    height: 520px;
-    width: 900px;
-}
-
 #theWorldOfTeaBox {
     text-align: left;
-    height: max-content;
-    width: 900px;
 }
 
 .theWorldOfTea {
@@ -143,7 +137,6 @@ body {
 
 #quizDefBox {
     height: max-content;
-    padding-bottom: 20px;
     margin-top: 20px;
 }
 
@@ -164,4 +157,43 @@ body {
 
 #timer {
     font-size: larger;
+}
+
+@media(max-width: 1000px) {
+
+    #navBox {
+        width: 700px;
+        display: grid;
+    }
+
+    .homePageBoxes {
+        opacity: 1;
+        width: 700px;
+    }
+}
+
+@media(max-width: 800px) {
+
+    #navBox {
+        width: 500px;
+        display: grid;
+    }
+
+    .homePageBoxes {
+        opacity: 1;
+        width: 500px;
+    }
+}
+
+@media(max-width: 600px) {
+
+    #navBox {
+        width: 400px;
+        display: grid;
+    }
+
+    .homePageBoxes {
+        opacity: 1;
+        width: 400px;
+    }
 }
