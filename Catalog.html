@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+    <div class="notification" id="notification">Item Added to Cart</div>
     <div id="welcomeBox" class="homePageBoxes">
         <h1>Tea Collection</h1>
         <h2>Browse our amazing collection of fresh blend teas!</h2>
@@ -32,7 +32,7 @@
             Its delicate flavor and floral notes offer a refreshing, subtly sweet taste. 
             Minimal processing highlights its purity, making it a choice for those seeking a refined tea experience.</p>
             <h3>Type: White</h3>
-            <button class="addCartButton">Add To Cart</button>
+            <button class="addCartButton" id="Btn1">Add To Cart</button>
     </div>
         
     <div class="TeaBox">
@@ -135,7 +135,17 @@
     </div>
 
     <script>
-       
+       const addToCartBtn = document.getElementById("Btn1");
+const notification = document.getElementById('notification');
+
+addToCartBtn.addEventListener('click', function() {
+  notification.style.display = 'block';
+  setTimeout(function() {
+    notification.style.display = 'none';
+  }, 2000); // Adjust the time (in milliseconds) the notification stays visible
+});
+
+
         function goToCatalog() {
             window.location.href = "QuizDeficultyPage.html";
         }
