@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8"> <!--Idk if we need these thingss-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Idk if we need these thingss-->
-    <title>Home Page</title>
+    <title>Easy Quiz Page</title>
     <link rel="stylesheet" href="styling.css">
 
     <div id="lifeBox">
@@ -24,22 +24,23 @@
     </div>
 
     <div id="quizDefBox" class="homePageBoxes">
-        <h1>Question Goes Here</h1>
+        <h1 id="teaQuestionNumber">Number goes here</h1>
+        <h1 id="teaQuestion">Question Goes Here</h1>
 
-        <button id="answer1" class="answerBtn" onclick="deleteImage()">
-            <h2>Not sure</h2>
+        <button id="answer1" class="answerBtn" onclick="checkAnswer(0)">
+            <h2></h2>
         </button>
 
-        <button id="answer2" class="answerBtn" onclick="deleteImage()">
-            <h2>how</h2>
+        <button id="answer2" class="answerBtn" onclick="checkAnswer(1)">
+            <h2></h2>
         </button> <br>
 
-        <button id="answer3" class="answerBtn" onclick="deleteImage()">
-            <h2>to program</h2>
+        <button id="answer3" class="answerBtn" onclick="checkAnswer(2)">
+            <h2></h2>
         </button>
 
-        <button id="answer4" class="answerBtn" onclick="deleteImage()">
-            <h2>this</h2>
+        <button id="answer4" class="answerBtn" onclick="checkAnswer(3)">
+            <h2></h2>
         </button>
     </div>
 
@@ -49,6 +50,160 @@
     </div>
 
     <script>
+        var teaQuestions = [
+            {
+                question: "What is the most common type of tea consumed worldwide?",
+                choices: ["Green tea", "Black tea", "Herbal tea", "White tea"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which tea is known for its calming properties and is often used as a bedtime beverage?",
+                choices: ["Chamomile tea", "Peppermint tea", "Black tea", "Oolong tea"],
+                correctAnswer: 0
+            },
+            {
+                question: "What is the primary ingredient in traditional Japanese green tea?",
+                choices: ["Black tea leaves", "Green tea leaves", "Oolong tea leaves", "White tea leaves"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which tea is famous for its vibrant red color and is often served with milk?",
+                choices: ["Green tea", "Chai tea", "Earl Grey tea", "Rooibos tea"],
+                correctAnswer: 3
+            },
+            {
+                question: "In what country did the tradition of afternoon tea originate?",
+                choices: ["France", "China", "Japan", "England"],
+                correctAnswer: 3
+            },
+            {
+                question: "What is the traditional Japanese tea ceremony called?",
+                choices: ["Chanoyu", "Chamomile tea", "Oolong ceremony", "Matcha time"],
+                correctAnswer: 0
+            },
+            {
+                question: "Which tea is often blended with various spices, including cinnamon and cloves, to create a warming beverage?",
+                choices: ["Masala chai", "Peppermint tea", "Jasmine tea", "Sencha"],
+                correctAnswer: 0
+            },
+            {
+                question: "Which tea is known for its light and floral taste, often enjoyed in the afternoon?",
+                choices: ["Darjeeling tea", "English Breakfast tea", "Chai tea", "Pu-erh tea"],
+                correctAnswer: 0
+            },
+            {
+                question: "In what country did the tea bag originate?",
+                choices: ["India", "United States", "China", "England"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which type of tea is fermented, resulting in a unique earthy flavor?",
+                choices: ["Green tea", "White tea", "Oolong tea", "Pu-erh tea"],
+                correctAnswer: 3
+            },
+            {
+                question: "Which tea is known for its refreshing and citrusy flavor, often enjoyed iced during hot weather?",
+                choices: ["White tea", "Green tea", "Iced tea", "Lemon tea"],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the primary ingredient in traditional Moroccan mint tea?",
+                choices: ["Green tea", "Peppermint leaves", "Oolong tea", "Black tea"],
+                correctAnswer: 0
+            },
+            {
+                question: "Which tea is often used in traditional Chinese medicine for its potential health benefits?",
+                choices: ["Oolong tea", "Hibiscus tea", "Pu-erh tea", "Ginseng tea"],
+                correctAnswer: 3
+            },
+            {
+                question: "Which tea is fermented and aged for an extended period, resulting in a dark and robust flavor?",
+                choices: ["White tea", "Green tea", "Oolong tea", "Pu-erh tea"],
+                correctAnswer: 3
+            },
+            {
+                question: "What is the primary flavor profile of jasmine tea?",
+                choices: ["Earthy", "Floral", "Spicy", "Citrusy"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which tea is often associated with its delicate and slightly sweet taste, and is minimally processed?",
+                choices: ["Green tea", "Black tea", "White tea", "Herbal tea"],
+                correctAnswer: 2
+            },
+            {
+                question: "In what country did bubble tea originate?",
+                choices: ["Taiwan", "Japan", "China", "Thailand"],
+                correctAnswer: 0
+            },
+            {
+                question: "What is the main ingredient in traditional Russian tea preparation known as 'Zavarka'?",
+                choices: ["Black tea", "Honey", "Lemon", "Jam"],
+                correctAnswer: 0
+            },
+            {
+                question: "Which tea is often used as a base for traditional Indian chai?",
+                choices: ["Darjeeling tea", "Assam tea", "Earl Grey tea", "Rooibos tea"],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the primary ingredient in traditional Thai iced tea, giving it a distinctive orange color?",
+                choices: ["Black tea", "Oolong tea", "Green tea", "Cardamom"],
+                correctAnswer: 0
+            }
+        ];
+        var questionsAsked = [""];
+        var counter = 0;
+
+
+        function displayRandomTeaQuestion() {
+
+            for (let i = 0; i < teaQuestions.length; i++) {
+                var index = Math.floor(Math.random() * teaQuestions.length);
+
+                if (!questionsAsked.includes(index)) {
+                    break;
+                }
+            }
+            questionsAsked.push(index);
+
+            if (counter++ == 5) {
+                window.location.href = "HomePage.html";
+            }
+
+            var currentQuestion = teaQuestions[index]; teaQuestionNumber
+
+            document.getElementById("teaQuestionNumber").innerText = "Question " + counter + ": ";
+
+            document.getElementById("teaQuestion").innerText = currentQuestion.question;
+
+            for (var i = 0; i < currentQuestion.choices.length; i++) {
+                document.getElementById("answer" + (i + 1)).innerText = currentQuestion.choices[i];
+            }
+        }
+
+        function checkAnswer(choiceIndex) {
+            var currentQuestion = teaQuestions.find(question => question.question == document.getElementById("teaQuestion").innerText);
+            var selectedAnswer = currentQuestion.choices[choiceIndex];
+
+            if (selectedAnswer == currentQuestion.choices[currentQuestion.correctAnswer]) {
+                document.getElementById("answer" + (choiceIndex + 1)).style.backgroundColor = "green";
+
+
+                setTimeout(function () {
+                    displayRandomTeaQuestion();
+
+                    for (let i = 1; i <= 4; i++) {
+                        document.getElementById("answer" + (i)).style.backgroundColor = "white";
+                    }
+                }, 1000);
+            }
+            else {
+                document.getElementById("answer" + (choiceIndex + 1)).style.backgroundColor = "red";
+                deleteImage();
+            }
+        }
+        displayRandomTeaQuestion();
 
         function deleteImage() {
             var lifeImageClass = document.getElementsByClassName("lifeImage");
@@ -68,10 +223,11 @@
             var lifeImage = document.getElementsByClassName("lifeImage");
 
             if (lifeImage.length == 0) {
-                window.location.href = "HomePage.html";
+                setTimeout(function () {
+                    window.location.href = "HomePage.html";
+                }, 1000);
             }
         }
-
 
         function toggleDarkMode() {
             var isDarkMode = document.body.classList.contains('dark-mode');

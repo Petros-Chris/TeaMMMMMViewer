@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8"> <!--Idk if we need these thingss-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Idk if we need these thingss-->
-    <title>Home Page</title>
+    <title>Hard Quiz Page</title>
     <link rel="stylesheet" href="styling.css">
 
     <div id="lifeBox">
@@ -22,22 +22,23 @@
     </div>
 
     <div id="quizDefBox" class="homePageBoxes">
-        <h1>Question Goes Here</h1>
+        <h1 id="teaQuestionNumber">Number goes here</h1>
+        <h1 id="teaQuestion">Question Goes Here</h1>
 
-        <button id="answer1" class="answerBtn" onclick="deleteImage()">
-            <h2>Not sure</h2>
+        <button id="answer1" class="answerBtn" onclick="checkAnswer(0)">
+            <h2></h2>
         </button>
 
-        <button id="answer2" class="answerBtn" onclick="deleteImage()">
-            <h2>how</h2>
+        <button id="answer2" class="answerBtn" onclick="checkAnswer(1)">
+            <h2></h2>
         </button> <br>
 
-        <button id="answer3" class="answerBtn" onclick="deleteImage()">
-            <h2>to program</h2>
+        <button id="answer3" class="answerBtn" onclick="checkAnswer(2)">
+            <h2></h2>
         </button>
 
-        <button id="answer4" class="answerBtn" onclick="deleteImage()">
-            <h2>this</h2>
+        <button id="answer4" class="answerBtn" onclick="checkAnswer(3)">
+            <h2></h2>
         </button> <br>
 
         <p id="timer">Timer Start!</p>
@@ -81,6 +82,155 @@
                 duration--;
             }
         }
+        var teaQuestions = [
+            {
+                question: "Which rare and expensive tea is harvested exclusively during a certain time of the year in the Darjeeling region?",
+                choices: ["Golden Monkey tea", "Silver Needle tea", "Dragon Well tea", "First Flush Darjeeling tea"],
+                correctAnswer: 3
+            },
+            {
+                question: "In which country is the Phoenix Dancong oolong tea traditionally produced?",
+                choices: ["Japan", "China", "Taiwan", "India"],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the primary difference between white tea and green tea in terms of processing?",
+                choices: ["Fermentation time", "Harvest season", "Oxidation level", "Tea leaf size"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which famous tea-producing region is known for its high-altitude gardens and the production of Himalayan Evergreen tea?",
+                choices: ["Nepal", "Kenya", "Vietnam", "Sri Lanka"],
+                correctAnswer: 0
+            },
+            {
+                question: "What is the primary flavor note in Tie Guan Yin, a popular Chinese oolong tea?",
+                choices: ["Nutty", "Floral", "Smoky", "Fruity"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which traditional Chinese tea ceremony is known for its elaborate preparation and use of Yixing clay teapots?",
+                choices: ["Gongfu tea ceremony", "Matcha tea ceremony", "Chanoyu", "Sado"],
+                correctAnswer: 0
+            },
+            {
+                question: "What is the main characteristic of Lapsang Souchong tea, a Chinese black tea?",
+                choices: ["Earthy aroma", "Smoky flavor", "Citrus notes", "Malty sweetness"],
+                correctAnswer: 1
+            },
+            {
+                question: "Which type of tea is rolled into small pellets resembling gunpowder and is often used in Moroccan mint tea?",
+                choices: ["Jasmine tea", "Gunpowder tea", "Oolong tea", "Pu-erh tea"],
+                correctAnswer: 1
+            },
+            {
+                question: "In Japanese tea ceremonies, what is the term for the thin, whisked green tea traditionally served?",
+                choices: ["Sencha", "Gyokuro", "Matcha", "Hojicha"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which tea is fermented and aged for an extended period, resulting in a dark and earthy flavor?",
+                choices: ["Darjeeling tea", "Oolong tea", "Pu-erh tea", "Assam tea"],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the primary flavor note in Dong Ding, a famous Taiwanese oolong tea?",
+                choices: ["Orchid", "Creamy", "Toasty", "Pineapple"],
+                correctAnswer: 2
+            },
+            {
+                question: "Which Japanese green tea is shade-grown before harvest, giving it a vibrant green color and rich umami flavor?",
+                choices: ["Sencha", "Genmaicha", "Hojicha", "Gyokuro"],
+                correctAnswer: 3
+            },
+            {
+                question: "What is the primary flavor note in Keemun tea, a Chinese black tea?",
+                choices: ["Smoky", "Fruity", "Malty", "Floral"],
+                correctAnswer: 0
+            },
+            {
+                question: "Which tea is traditionally prepared by steeping large, compressed tea leaves in a Yixing clay teapot?",
+                choices: ["Puerh tea", "Darjeeling tea", "Dragon Well tea", "Silver Needle tea"],
+                correctAnswer: 0
+            },
+            {
+                question: "In which region of Japan is Uji tea, known for its high-quality matcha, primarily produced?",
+                choices: ["Kyoto", "Hokkaido", "Osaka", "Tokyo"],
+                correctAnswer: 0
+            },
+            {
+                question: "What is the main characteristic of Yellow Gold tea, a rare and unique Chinese tea?",
+                choices: ["Golden color", "Earthy aroma", "Buttery texture", "Champagne-like taste"],
+                correctAnswer: 3
+            },
+            {
+                question: "Which tea is traditionally hand-tied into a bulb shape that unfurls during steeping, revealing a flower-like appearance?",
+                choices: ["Dragon Pearl Jasmine tea", "Blooming tea", "Ti Kuan Yin tea", "Matcha tea"],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the primary flavor note in Korean traditional tea, Daejak Dancha?",
+                choices: ["Chestnut", "Seaweed", "Pine", "Ginseng"],
+                correctAnswer: 0
+            },
+            {
+                question: "Which Chinese tea is known for its unique processing method involving sun-drying and fermentation?",
+                choices: ["Lychee Red tea", "Qi Dan Cong tea", "An Ji Bai Cha", "Yue Guang Bai White tea"],
+                correctAnswer: 0
+            }
+        ];
+        var questionsAsked = [""];
+        var counter = 0;
+
+
+        function displayRandomTeaQuestion() {
+
+            for (let i = 0; i < teaQuestions.length; i++) {
+                var index = Math.floor(Math.random() * teaQuestions.length);
+
+                if (!questionsAsked.includes(index)) {
+                    break;
+                }
+            }
+            questionsAsked.push(index);
+
+            if (counter++ == 5) {
+                window.location.href = "HomePage.html";
+            }
+
+            var currentQuestion = teaQuestions[index]; teaQuestionNumber
+
+            document.getElementById("teaQuestionNumber").innerText = "Question " + counter + ": ";
+
+            document.getElementById("teaQuestion").innerText = currentQuestion.question;
+
+            for (var i = 0; i < currentQuestion.choices.length; i++) {
+                document.getElementById("answer" + (i + 1)).innerText = currentQuestion.choices[i];
+            }
+        }
+
+        function checkAnswer(choiceIndex) {
+            var currentQuestion = teaQuestions.find(question => question.question == document.getElementById("teaQuestion").innerText);
+            var selectedAnswer = currentQuestion.choices[choiceIndex];
+
+            if (selectedAnswer == currentQuestion.choices[currentQuestion.correctAnswer]) {
+                document.getElementById("answer" + (choiceIndex + 1)).style.backgroundColor = "green";
+                duration = 10;
+
+                setTimeout(function () {
+                    displayRandomTeaQuestion();
+
+                    for (let i = 1; i <= 4; i++) {
+                        document.getElementById("answer" + (i)).style.backgroundColor = "white";
+                    }
+                }, 1000);
+            }
+            else {
+                document.getElementById("answer" + (choiceIndex + 1)).style.backgroundColor = "red";
+                deleteImage();
+            }
+        }
+        displayRandomTeaQuestion();
 
         function deleteImage() {
             var lifeImageClass = document.getElementsByClassName("lifeImage");
@@ -97,16 +247,6 @@
             if (lifeImage.length == 0) {
                 window.location.href = "HomePage.html";
             }
-        }
-
-
-
-        function goToEasyQuiz() {
-
-        }
-
-        function goToHardQuiz() {
-
         }
 
         function toggleDarkMode() {
