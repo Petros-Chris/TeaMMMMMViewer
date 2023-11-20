@@ -3,22 +3,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> <!--Idk if we need these thingss-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Idk if we need these thingss-->
-    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Difficulty</title>
     <link rel="stylesheet" href="styling.css">
+
     <div id="navBox">
         <a href="HomePage.html" class="navLink">Home</a>
         <a href="Catalog.html" class="navLink">Catalog</a>
         <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
         <a href="yummy.html" class="navLink">Checkout</a>
     </div>
+</head>
 
+<body>
     <div id="quizDefBox" class="homePageBoxes">
         <h1>What Quiz Difficulty Would You Like?</h1>
+
         <button id="easyQuizBtn" onclick="goToEasyQuiz()">
             <h2>Easy Mode</h2>Up To 5% Off
         </button>
+
         <button id="hardQuizBtn" onclick="goToHardQuiz()">
             <h2>Hard Mode</h2>Up To 15% Off
         </button> <br>
@@ -30,7 +35,6 @@
             and you will have a 10 second timer</p>
 
         <img id="quizdefImage" src="goodLuck.png" alt="To give the viewer confidence">
-
     </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
@@ -83,8 +87,7 @@
             }
         });
     </script>
-</head>
 
-<body>
+    <body>
 
 </html>

@@ -152,7 +152,6 @@ body {
     margin: 5px;
     height: 100px;
     width: 150px;
-    
 }
 
 #timer {
@@ -200,7 +199,7 @@ body {
 
 .TeaPageBoxes {
     text-align: center;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     width: 900px;
     position: relative;
@@ -213,7 +212,7 @@ body {
     transition: width 0.5s, opacity 0.5s ease-in-out;
 }
 
-.TeaBox{
+.TeaBox {
     text-align: center;
     background-color: antiquewhite;
     transition: background-color 0.5s ease;
@@ -223,48 +222,42 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-   
     transition: width 0.5s, opacity 0.5s ease-in-out;
-width: 380px;
-height: 600px;
-margin: 10px;
+    width: 380px;
+    height: 600px;
+    margin: 10px;
 
 }
 
-.TeaImages{
-   
+.TeaImages {
     height: 200px;
 }
 
-.TeaBox:hover{
+.TeaBox:hover {
     opacity: 1;
-
 }
 
-.TeaBox.dark-mode{
+.TeaBox.dark-mode {
     background-color: #222;
     color: #fff;
-
 }
 
-.addCartButton{
-width: 350px;
-height: 100px;
-font-size: 40px;
+.addCartButton {
+    width: 350px;
+    height: 100px;
+    font-size: 40px;
 }
 
 .notification {
     display: none;
-  background-color: #5cb85c;
-  color: #fff;
-  padding: 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 10px;
 
-  border-radius: 5px;
-            position: fixed;
-            top: 0;
-            right: 0; 
-            
-            width: 400px;
-            
-            transition: right 0.5s; 
-  }
+    border-radius: 5px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    transition: right 0.5s;
+}

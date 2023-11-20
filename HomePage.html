@@ -3,10 +3,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> <!--Idk if we need these thingss-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Idk if we need these thingss-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="styling.css">
+
     <div id="navBox">
         <a href="HomePage.html" class="navLink">Home</a>
         <a href="Catalog.html" class="navLink">Catalog</a>
@@ -16,10 +17,9 @@
 </head>
 
 <body>
-
     <div id="welcomeBox" class="homePageBoxes">
         <h1>Welcome!</h1>
-        <h4 id="teaFact">Did You Know That (random tea fact)</h4>
+        <h4 id="teaFact"></h4>
 
         <h2 id="quizTaker">Take The Quiz Now To Receive Up To 15% Off Your Next Order</h2>
 
@@ -27,8 +27,6 @@
 
         <button id="quizButton" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
         <button id="catalogueButton" onclick="goToCatalog()">Browse Catalogue Instead</button>
-
-
     </div>
 
     <div id="theWorldOfTeaBox" class="homePageBoxes">
@@ -51,8 +49,6 @@
             an everyday indulgence that elevates the ordinary into something extraordinary. So, here's to the magic of
             tea – a simple pleasure that enriches our lives one delightful sip at a time.
         </p>
-
-
     </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
@@ -89,14 +85,12 @@
 
         function displayRandomTeaFact() {
             var randomIndex = Math.floor(Math.random() * teaFacts.length);
-
             document.getElementById('teaFact').innerText = teaFacts[randomIndex];
         }
-
         displayRandomTeaFact();
 
         function goToCatalog() {
-            window.location.href = "QuizDeficultyPage.html";
+            window.location.href = "Catalog.html";
         }
         function goToQuizDef() {
             window.location.href = "QuizDifficultyPage.html";
@@ -128,7 +122,7 @@
             });
             localStorage.setItem('darkMode', !isDarkMode);
         }
-        
+
         //this makes the page dark if it was set to be dark on another page
         document.addEventListener('DOMContentLoaded', function () {
             var storedDarkMode = localStorage.getItem('darkMode');
