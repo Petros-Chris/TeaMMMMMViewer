@@ -18,20 +18,20 @@
 
 <body>
     <div id="welcomeBox" class="homePageBoxes">
-        <h1>Welcome!</h1>
-        <h4 id="teaFact"></h4>
+        <h1 class = "darkText">Welcome!</h1>
+        <h4 id="teaFact" class = "darkText"></h4>
 
-        <h2 id="quizTaker">Take The Quiz Now To Receive Up To 15% Off Your Next Order</h2>
+        <h2 id="quizTaker" class = "darkText">Take The Quiz Now To Receive Up To 15% Off Your Next Order</h2>
 
         <img src="takeTheQuiz.gif" id="takeTheQuiz" alt="Gif to convince viewer to click the quiz button"> <br>
 
-        <button id="quizButton" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
-        <button id="catalogueButton" onclick="goToCatalog()">Browse Catalogue Instead</button>
+        <button id="quizButton" class = "darkBtn" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
+        <button id="catalogueButton" class = "darkBtn" onclick="goToCatalog()">Browse Catalogue Instead</button>
     </div>
 
-    <div id="theWorldOfTeaBox" class="homePageBoxes">
+    <div id="theWorldOfTeaBox" class="homePageBoxes darkText">
         <h2>The World Of Tea:</h2>
-        <p class="theWorldOfTea">
+        <p class="theWorldOfTea darkText">
             Tea, the unsung hero in the world of beverages, isn't merely a liquid in a cup;
             it's a symphony of lovely effects that touch both body and soul. Brimming with
             antioxidants, tea acts as a health elixir, deploying tiny warriors to protect
@@ -41,7 +41,7 @@
             jittery aftermath. And then there are the flavors, a kaleidoscope for your taste buds,
             offering variety for every mood.
         </p>
-        <p class="theWorldOfTea">
+        <p class="theWorldOfTea darkText">
             Tea isn't just a solo experience; it's a social catalyst, bringing people together over shared moments
             and conversations. Each sip is a journey, a mini-adventure that transcends the mundane. It's a taste
             of relaxation, a boost for your brain, and a celebration of diverse flavors. In a world that often
@@ -52,7 +52,7 @@
     </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
-        <label>Toggle Dark Mode</label>
+        <label class = "darkText">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
@@ -97,10 +97,10 @@
         }
 
         function toggleDarkMode() {
-            var isDarkMode = document.body.classList.contains('dark-mode');
+            var isDarkMode = document.body.classList.contains('dark');
 
             //allows the switch
-            document.body.classList.toggle('dark-mode', !isDarkMode);
+            document.body.classList.toggle('dark', !isDarkMode);
 
             //This updates the checkbox depeing on if dark mode is on or off
             var checkbox = document.getElementById('darkCheckBox');
@@ -109,17 +109,30 @@
 
             //makes the toggle dark mode box dark
             var darkbutton = document.getElementById("darkModeButton")
-            darkbutton.classList.toggle('dark-mode', !isDarkMode);
+            darkbutton.classList.toggle('dark', !isDarkMode);
 
             //makes the nav dark
             var darknav = document.getElementById("navBox");
-            darknav.classList.toggle('dark-mode', !isDarkMode);
+            darknav.classList.toggle('dark', !isDarkMode);
 
-            // Toggle dark mode class on elements with the homePageBoxes class
+            //Toggle dark mode class on elements with the homePageBoxes class
             var darkModeElements = document.querySelectorAll('.homePageBoxes');
             darkModeElements.forEach(function (element) {
-                element.classList.toggle('dark-mode', !isDarkMode);
+                element.classList.toggle('dark', !isDarkMode);
             });
+
+            //Toggle dark mode class on buttons
+            var darkModeBtn = document.querySelectorAll('.darkBtn');
+            darkModeBtn.forEach(function (element) {
+                element.classList.toggle('dark', !isDarkMode);
+            });
+
+            //Toggle dark mode on text
+            var darkModetext = document.querySelectorAll('.darkText');
+            darkModetext.forEach(function (element) {
+                element.classList.toggle('dark', !isDarkMode);
+            });
+
             localStorage.setItem('darkMode', !isDarkMode);
         }
 

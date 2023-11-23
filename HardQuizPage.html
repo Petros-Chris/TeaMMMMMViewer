@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styling.css">
 
     <div id="lifeBox">
-        <p id="lifeText">Life:
+        <p id="lifeText" class = "darkText">Life:
             <img id="lifeImage1" class="lifeImage" src=ALife.png>
         </p>
 
@@ -22,23 +22,23 @@
     </div>
 </head>
 
-<div id="quizDefBox" class="homePageBoxes">
-    <h1 id="teaQuestionNumber"></h1>
-    <h1 id="teaQuestion"></h1>
+<div id="quizDefBox" class="homePageBoxes darkText">
+    <h1 id="teaQuestionNumber" class = "darkText"></h1>
+    <h1 id="teaQuestion" class = "darkText"></h1>
 
-    <button id="answer1" class="answerBtn" onclick="checkAnswer(0)">
+    <button id="answer1" class="answerBtn darkBtn" onclick="checkAnswer(0)">
         <h2></h2>
     </button>
 
-    <button id="answer2" class="answerBtn" onclick="checkAnswer(1)">
+    <button id="answer2" class="answerBtn darkBtn" onclick="checkAnswer(1)">
         <h2></h2>
     </button> <br>
 
-    <button id="answer3" class="answerBtn" onclick="checkAnswer(2)">
+    <button id="answer3" class="answerBtn darkBtn" onclick="checkAnswer(2)">
         <h2></h2>
     </button>
 
-    <button id="answer4" class="answerBtn" onclick="checkAnswer(3)">
+    <button id="answer4" class="answerBtn darkBtn" onclick="checkAnswer(3)">
         <h2></h2>
     </button> <br>
 
@@ -46,7 +46,7 @@
 </div>
 
 <div id="darkModeButton" onclick="toggleDarkMode()">
-    <label>Toggle Dark Mode</label>
+    <label class = "darkText">Toggle Dark Mode</label>
     <input type="checkbox" id="darkCheckBox">
 </div>
 
@@ -77,7 +77,7 @@
             clearInterval(timerInterval);
 
             setTimeout(function () {
-                window.location.href = "HomePage.html";
+           //     window.location.href = "HomePage.html";
             }, 1000);
         } else {
             duration--;
@@ -222,7 +222,7 @@
                 displayRandomTeaQuestion();
 
                 for (let i = 1; i <= 4; i++) {
-                    document.getElementById("answer" + (i)).style.backgroundColor = "white";
+                    document.getElementById("answer" + (i)).style.backgroundColor = "";
                 }
             }, 1000);
         }
@@ -251,10 +251,11 @@
     }
 
     function toggleDarkMode() {
-        var isDarkMode = document.body.classList.contains('dark-mode');
+
+        var isDarkMode = document.body.classList.contains('dark');
 
         //allows the switch
-        document.body.classList.toggle('dark-mode', !isDarkMode);
+        document.body.classList.toggle('dark', !isDarkMode);
 
         //This updates the checkbox depeing on if dark mode is on or off
         var checkbox = document.getElementById('darkCheckBox');
@@ -263,19 +264,32 @@
 
         //makes the toggle dark mode box dark
         var darkbutton = document.getElementById("darkModeButton")
-        darkbutton.classList.toggle('dark-mode', !isDarkMode);
+        darkbutton.classList.toggle('dark', !isDarkMode);
 
         //makes the nav dark
         var darknav = document.getElementById("lifeBox");
-        darknav.classList.toggle('dark-mode', !isDarkMode);
+        darknav.classList.toggle('dark', !isDarkMode);
 
         var darknav = document.getElementById("navBox");
-        darknav.classList.toggle('dark-mode', !isDarkMode);
+        darknav.classList.toggle('dark', !isDarkMode);
 
         // Toggle dark mode class on elements with the homePageBoxes class
         var darkModeElements = document.querySelectorAll('.homePageBoxes');
         darkModeElements.forEach(function (element) {
-            element.classList.toggle('dark-mode', !isDarkMode);
+            element.classList.toggle('dark', !isDarkMode);
+        });
+        localStorage.setItem('darkMode', !isDarkMode);
+
+        //Toggle dark mode on all buttons
+        var darkModeButtons = document.querySelectorAll('.darkBtn');
+        darkModeButtons.forEach(function (element) {
+            element.classList.toggle('dark', !isDarkMode);
+        });
+
+        //Toggle dark mode on text
+        var darkModeText = document.querySelectorAll('.darkText');
+        darkModeText.forEach(function (element) {
+            element.classList.toggle('dark', !isDarkMode);
         });
         localStorage.setItem('darkMode', !isDarkMode);
     }

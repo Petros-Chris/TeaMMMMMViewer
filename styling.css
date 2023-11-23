@@ -8,6 +8,8 @@ body {
     justify-content: center;
 }
 
+/* All Boxes (Div) */
+
 .homePageBoxes {
     text-align: center;
     background-color: antiquewhite;
@@ -23,15 +25,6 @@ body {
     transition: width 0.5s, opacity 0.5s ease-in-out;
 }
 
-.homePageBoxes.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.homePageBoxes:hover {
-    opacity: 1;
-}
-
 #navBox {
     margin-bottom: 20px;
     background-color: rgb(252, 207, 149);
@@ -41,25 +34,6 @@ body {
     width: max-content;
     opacity: 1;
     border-radius: 20px;
-    transition: width 0.5s;
-}
-
-.navLink {
-    margin-right: 90px;
-    margin-left: 70px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    font-size: x-large;
-}
-
-#navBox.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.navLink:link {
-    color: green
 }
 
 #lifeBox {
@@ -68,133 +42,13 @@ body {
     padding-left: 20px;
 }
 
-.lifeImage {
-    width: 20px;
-    height: 20px;
-}
-
-#lifeText {
-    font-size: x-large;
-    margin-bottom: 0;
-}
-
-#lifeBox.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
 #theWorldOfTeaBox {
     text-align: left;
 }
 
-.theWorldOfTea {
-    font-size: x-large;
-}
-
-#quizTaker {
-    padding-top: 40px;
-}
-
-#quizButton {
-    padding: 10px;
-}
-
-#catalogueButton {
-    padding: 3px;
-    border-radius: 10px;
-    margin: 5px;
-}
-
-#takeTheQuiz {
-    width: 200px;
-    height: 200px;
-}
-
-#teaFact {
-    font-size: larger;
-}
-
-#darkModeButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 20px;
-    opacity: 0.7;
-    transition: opacity 0.5s ease-in-out;
-}
-
-#darkModeButton.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-#darkModeButton:hover {
-    opacity: 1;
-}
-
 #quizDefBox {
-    height: max-content;
+    height: 600px;
     margin-top: 20px;
-}
-
-#hardQuizBtn {
-    margin-bottom: 60px;
-}
-
-#quizdefImage {
-    height: 200px;
-    width: 200px;
-}
-
-.answerBtn {
-    margin: 5px;
-    height: 100px;
-    width: 150px;
-}
-
-#timer {
-    font-size: larger;
-}
-
-@media(max-width: 1000px) {
-
-    #navBox {
-        width: 700px;
-        display: grid;
-    }
-
-    .homePageBoxes {
-        opacity: 1;
-        width: 700px;
-    }
-}
-
-@media(max-width: 800px) {
-
-    #navBox {
-        width: 500px;
-        display: grid;
-    }
-
-    .homePageBoxes {
-        opacity: 1;
-        width: 500px;
-    }
-}
-
-@media(max-width: 600px) {
-
-    #navBox {
-        width: 400px;
-        display: grid;
-    }
-
-    .homePageBoxes {
-        opacity: 1;
-        width: 400px;
-    }
 }
 
 .TeaPageBoxes {
@@ -229,25 +83,6 @@ body {
 
 }
 
-.TeaImages {
-    height: 200px;
-}
-
-.TeaBox:hover {
-    opacity: 1;
-}
-
-.TeaBox.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.addCartButton {
-    width: 350px;
-    height: 100px;
-    font-size: 40px;
-}
-
 .notification {
     display: none;
     background-color: #5cb85c;
@@ -260,4 +95,172 @@ body {
     right: 0;
     width: 400px;
     transition: right 0.5s;
+}
+
+/**/
+
+.navLink {
+    margin-right: 90px;
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: x-large;
+    transition: margin 0.5s ease;
+}
+
+.lifeImage {
+    width: 20px;
+    height: 20px;
+}
+
+#lifeText {
+    font-size: x-large;
+    margin-bottom: 0;
+}
+
+.theWorldOfTea {
+    font-size: x-large;
+}
+
+#quizTaker {
+    padding-top: 40px;
+}
+
+#quizButton {
+    padding: 10px;
+}
+
+#catalogueButton {
+    padding: 3px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#takeTheQuiz {
+    width: 200px;
+    height: 200px;
+}
+
+#teaFact {
+    font-size: larger;
+}
+
+#hardQuizBtn {
+    margin-bottom: 60px;
+}
+
+#quizdefImage {
+    height: 200px;
+    width: 200px;
+}
+
+.answerBtn {
+    background-color: white;
+    margin: 5px;
+    height:100px;
+    width:150px;
+    /* Really Werid Bug, dk how to fix :( */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#timer {
+    font-size: larger;
+}
+
+
+.TeaImages {
+    height: 200px;
+}
+
+.addCartButton {
+    width: 350px;
+    height: 100px;
+    font-size: 40px;
+}
+
+/* All Speical Effects */
+
+#darkModeButton:hover,
+.homePageBoxes:hover,
+.TeaBox:hover {
+    opacity: 1;
+}
+
+.navLink:link {
+    color: green
+}
+
+/* All Dark versions */
+
+#darkModeButton { /* Except this one */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.homePageBoxes.dark,
+#navBox.dark,
+#lifeBox.dark,
+.TeaBox.dark,
+#darkModeButton.dark {
+    background-color: #222;
+    color: #fff;
+}
+
+.answerBtn.dark,
+.darkBtn.dark {
+    background-color: #bdbdbd;
+}
+
+.darkText.dark {
+    color: #bdbdbd;
+}
+
+/* Media Interactly */
+
+@media(max-width: 1000px) {
+
+    .navLink {
+        margin-left: 55px;
+        margin-right: 55px;
+    }
+
+    .homePageBoxes {
+        opacity: 1;
+        width: 700px;
+    }
+}
+
+@media(max-width: 800px) {
+
+    .navLink {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .homePageBoxes {
+        opacity: 1;
+        width: 500px;
+    }
+}
+
+@media(max-width: 600px) {
+    
+    .navLink {
+        margin-left: 17px;
+        margin-right: 17px;
+    }
+
+    .homePageBoxes {
+        opacity: 1;
+        width: 400px;
+    }
 }
