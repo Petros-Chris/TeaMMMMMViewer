@@ -1,0 +1,421 @@
+{
+    "hardTeaQuestions": [
+        {
+            "question": "Which rare and expensive tea is harvested exclusively during a certain time of the year in the Darjeeling region?",
+            "choices": [
+                "Golden Monkey tea",
+                "Silver Needle tea",
+                "Dragon Well tea",
+                "First Flush Darjeeling tea"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "In which country is the Phoenix Dancong oolong tea traditionally produced?",
+            "choices": [
+                "Japan",
+                "China",
+                "Taiwan",
+                "India"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is the primary difference between white tea and green tea in terms of processing?",
+            "choices": [
+                "Fermentation time",
+                "Harvest season",
+                "Oxidation level",
+                "Tea leaf size"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "Which famous tea-producing region is known for its high-altitude gardens and the production of Himalayan Evergreen tea?",
+            "choices": [
+                "Nepal",
+                "Kenya",
+                "Vietnam",
+                "Sri Lanka"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "What is the primary flavor note in Tie Guan Yin, a popular Chinese oolong tea?",
+            "choices": [
+                "Nutty",
+                "Floral",
+                "Smoky",
+                "Fruity"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which traditional Chinese tea ceremony is known for its elaborate preparation and use of Yixing clay teapots?",
+            "choices": [
+                "Gongfu tea ceremony",
+                "Matcha tea ceremony",
+                "Chanoyu",
+                "Sado"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "What is the main characteristic of Lapsang Souchong tea, a Chinese black tea?",
+            "choices": [
+                "Earthy aroma",
+                "Smoky flavor",
+                "Citrus notes",
+                "Malty sweetness"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which type of tea is rolled into small pellets resembling gunpowder and is often used in Moroccan mint tea?",
+            "choices": [
+                "Jasmine tea",
+                "Gunpowder tea",
+                "Oolong tea",
+                "Pu-erh tea"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "In Japanese tea ceremonies, what is the term for the thin, whisked green tea traditionally served?",
+            "choices": [
+                "Sencha",
+                "Gyokuro",
+                "Matcha",
+                "Hojicha"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "Which tea is fermented and aged for an extended period, resulting in a dark and earthy flavor?",
+            "choices": [
+                "Darjeeling tea",
+                "Oolong tea",
+                "Pu-erh tea",
+                "Assam tea"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is the primary flavor note in Dong Ding, a famous Taiwanese oolong tea?",
+            "choices": [
+                "Orchid",
+                "Creamy",
+                "Toasty",
+                "Pineapple"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "Which Japanese green tea is shade-grown before harvest, giving it a vibrant green color and rich umami flavor?",
+            "choices": [
+                "Sencha",
+                "Genmaicha",
+                "Hojicha",
+                "Gyokuro"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "What is the primary flavor note in Keemun tea, a Chinese black tea?",
+            "choices": [
+                "Smoky",
+                "Fruity",
+                "Malty",
+                "Floral"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Which tea is traditionally prepared by steeping large, compressed tea leaves in a Yixing clay teapot?",
+            "choices": [
+                "Puerh tea",
+                "Darjeeling tea",
+                "Dragon Well tea",
+                "Silver Needle tea"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "In which region of Japan is Uji tea, known for its high-quality matcha, primarily produced?",
+            "choices": [
+                "Kyoto",
+                "Hokkaido",
+                "Osaka",
+                "Tokyo"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "What is the main characteristic of Yellow Gold tea, a rare and unique Chinese tea?",
+            "choices": [
+                "Golden color",
+                "Earthy aroma",
+                "Buttery texture",
+                "Champagne-like taste"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "Which tea is traditionally hand-tied into a bulb shape that unfurls during steeping, revealing a flower-like appearance?",
+            "choices": [
+                "Dragon Pearl Jasmine tea",
+                "Blooming tea",
+                "Ti Kuan Yin tea",
+                "Matcha tea"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is the primary flavor note in Korean traditional tea, Daejak Dancha?",
+            "choices": [
+                "Chestnut",
+                "Seaweed",
+                "Pine",
+                "Ginseng"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Which Chinese tea is known for its unique processing method involving sun-drying and fermentation?",
+            "choices": [
+                "Lychee Red tea",
+                "Qi Dan Cong tea",
+                "An Ji Bai Cha",
+                "Yue Guang Bai White tea"
+            ],
+            "correctAnswer": 0
+        }
+    ],
+    "easyTeaQuestions": [
+        {
+            "question": "What is the most common type of tea consumed worldwide?",
+            "choices": [
+                "Green tea",
+                "Black tea",
+                "Herbal tea",
+                "White tea"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which tea is known for its calming properties and is often used as a bedtime beverage?",
+            "choices": [
+                "Chamomile tea",
+                "Peppermint tea",
+                "Black tea",
+                "Oolong tea"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "What is the primary ingredient in traditional Japanese green tea?",
+            "choices": [
+                "Black tea leaves",
+                "Green tea leaves",
+                "Oolong tea leaves",
+                "White tea leaves"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which tea is famous for its vibrant red color and is often served with milk?",
+            "choices": [
+                "Green tea",
+                "Chai tea",
+                "Earl Grey tea",
+                "Rooibos tea"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "In what country did the tradition of afternoon tea originate?",
+            "choices": [
+                "France",
+                "China",
+                "Japan",
+                "England"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "What is the traditional Japanese tea ceremony called?",
+            "choices": [
+                "Chanoyu",
+                "Chamomile tea",
+                "Oolong ceremony",
+                "Matcha time"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Which tea is often blended with various spices, including cinnamon and cloves, to create a warming beverage?",
+            "choices": [
+                "Masala chai",
+                "Peppermint tea",
+                "Jasmine tea",
+                "Sencha"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Which tea is known for its light and floral taste, often enjoyed in the afternoon?",
+            "choices": [
+                "Darjeeling tea",
+                "English Breakfast tea",
+                "Chai tea",
+                "Pu-erh tea"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "In what country did the tea bag originate?",
+            "choices": [
+                "India",
+                "United States",
+                "China",
+                "England"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which type of tea is fermented, resulting in a unique earthy flavor?",
+            "choices": [
+                "Green tea",
+                "White tea",
+                "Oolong tea",
+                "Pu-erh tea"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "Which tea is known for its refreshing and citrusy flavor, often enjoyed iced during hot weather?",
+            "choices": [
+                "White tea",
+                "Green tea",
+                "Iced tea",
+                "Lemon tea"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is the primary ingredient in traditional Moroccan mint tea?",
+            "choices": [
+                "Green tea",
+                "Peppermint leaves",
+                "Oolong tea",
+                "Black tea"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Which tea is often used in traditional Chinese medicine for its potential health benefits?",
+            "choices": [
+                "Oolong tea",
+                "Hibiscus tea",
+                "Pu-erh tea",
+                "Ginseng tea"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "Which tea is fermented and aged for an extended period, resulting in a dark and robust flavor?",
+            "choices": [
+                "White tea",
+                "Green tea",
+                "Oolong tea",
+                "Pu-erh tea"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "question": "What is the primary flavor profile of jasmine tea?",
+            "choices": [
+                "Earthy",
+                "Floral",
+                "Spicy",
+                "Citrusy"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which tea is often associated with its delicate and slightly sweet taste, and is minimally processed?",
+            "choices": [
+                "Green tea",
+                "Black tea",
+                "White tea",
+                "Herbal tea"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "question": "In what country did bubble tea originate?",
+            "choices": [
+                "Taiwan",
+                "Japan",
+                "China",
+                "Thailand"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "What is the main ingredient in traditional Russian tea preparation known as 'Zavarka'?",
+            "choices": [
+                "Black tea",
+                "Honey",
+                "Lemon",
+                "Jam"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "question": "Which tea is often used as a base for traditional Indian chai?",
+            "choices": [
+                "Darjeeling tea",
+                "Assam tea",
+                "Earl Grey tea",
+                "Rooibos tea"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is the primary ingredient in traditional Thai iced tea, giving it a distinctive orange color?",
+            "choices": [
+                "Black tea",
+                "Oolong tea",
+                "Green tea",
+                "Cardamom"
+            ],
+            "correctAnswer": 0
+        }
+    ],
+    "teaFacts": [
+        "Did you know that tea is believed to have originated in China over 5,000 years ago?",
+        "Did you know that after water, tea is the most widely consumed beverage in the world?",
+        "Did you know that the first tea bags were created by accident in the early 20th century?",
+        "Did you know that Herbal infusions, often called 'teas,' are not technically teas?",
+        "Did you know that Green tea and black tea come from the same plant, Camellia sinensis?",
+        "Did you know that The traditional Japanese tea ceremony is a ritual influenced by Zen Buddhism?",
+        "Did you know that Earl Grey tea is flavored with oil from the rind of the bergamot orange?",
+        "Did you know that Oolong tea is partially oxidized, falling between green tea and black tea in processing?",
+        "Did you know that White tea is the least processed of all teas, made from young leaves and buds?",
+        "Did you know that tea leaves contain antioxidants known as catechins, which may have health benefits?",
+        "Did you know that Pu-erh tea, a fermented tea, can be aged for several years, enhancing its flavor?",
+        "Did you know that the temperature and steeping time can affect the flavor of tea; black tea is often steeped in hotter water than green tea?",
+        "Did you know that tea bags were invented in the early 20th century and became popular for their convenience?",
+        "Did you know that tea has been used in traditional medicine for various purposes, including improving digestion and reducing stress?",
+        "Did you know that tea played a significant role in the historical Silk Road trade routes?",
+        "Did you know that the concept of afternoon tea is credited to Anna, the Duchess of Bedford, in 19th-century England?",
+        "Did you know that the term 'chai' simply means 'tea' in many parts of the world?",
+        "Did you know that tea ceremonies are an integral part of cultural traditions in countries like China, Japan, and Korea?",
+        "Did you know that the Camellia sinensis plant is an evergreen shrub or tree that can grow up to 52 feet tall?",
+        "Did you know that tea leaves are often classified based on their size and appearance, leading to different grades of tea?",
+        "Did you know that iced tea became popular in the United States in the early 20th century, especially in the southern states?",
+        "Did you know that in some cultures, tea is an essential part of social gatherings and ceremonies?",
+        "Did you know that tea enthusiasts may use specialized tools, such as tea infusers and teapots, for brewing and enjoying tea?"
+    ]
+}

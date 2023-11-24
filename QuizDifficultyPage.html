@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Difficulty</title>
     <link rel="stylesheet" href="styling.css">
+    <script src="CommonScriptHolder.js"></script>
 
     <div id="navBox">
         <a href="HomePage.html" class="navLink">Home</a>
@@ -37,8 +38,8 @@
         <img id="quizdefImage" src="goodLuck.png" alt="To give the viewer confidence">
     </div>
 
-    <div id="darkModeButton"  onclick="toggleDarkMode()">
-        <label class = "darkText">Toggle Dark Mode</label>
+    <div id="darkModeButton" onclick="toggleDarkMode()">
+        <label for="darkCheckBox" class="darkText">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
@@ -51,53 +52,6 @@
             window.location.href = "HardQuizPage.html";
         }
 
-        function toggleDarkMode() {
-            var isDarkMode = document.body.classList.contains('dark');
-
-            //allows the switch
-            document.body.classList.toggle('dark', !isDarkMode);
-
-            //This updates the checkbox depeing on if dark mode is on or off
-            var checkbox = document.getElementById('darkCheckBox');
-            checkbox.checked = !isDarkMode;
-            checkbox.disabled = isDarkMode;
-
-            //makes the toggle dark mode box dark
-            var darkbutton = document.getElementById("darkModeButton")
-            darkbutton.classList.toggle('dark', !isDarkMode);
-
-            //makes the nav dark
-            var darknav = document.getElementById("navBox");
-            darknav.classList.toggle('dark', !isDarkMode);
-
-            // Toggle dark mode class on elements with the homePageBoxes class
-            var darkModeElements = document.querySelectorAll('.homePageBoxes');
-            darkModeElements.forEach(function (element) {
-                element.classList.toggle('dark', !isDarkMode);
-            });
-
-            //Toggle dark mode on buttons
-            var darkModeBtn = document.querySelectorAll('.darkBtn');
-            darkModeBtn.forEach(function (element) {
-                element.classList.toggle('dark', !isDarkMode);
-            });
-
-            //Toggle dark mode on text
-            var darkModeText = document.querySelectorAll('.darkText');
-            darkModeText.forEach(function (element) {
-                element.classList.toggle('dark', !isDarkMode);
-            });
-            localStorage.setItem('darkMode', !isDarkMode);
-        }
-
-        //this makes the page dark if it was set to be dark on another page
-        document.addEventListener('DOMContentLoaded', function () {
-            var storedDarkMode = localStorage.getItem('darkMode');
-
-            if (storedDarkMode === 'true') {
-                toggleDarkMode();
-            }
-        });
     </script>
 
     <body>

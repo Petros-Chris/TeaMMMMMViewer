@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catalog</title>
   <link rel="stylesheet" href="styling.css">
+  <script src="CommonScriptHolder.js"></script>
 
   <div id="navBox">
     <a href="HomePage.html" class="navLink">Home</a>
@@ -167,7 +168,7 @@
   </div>
 
   <div id="darkModeButton" onclick="toggleDarkMode()">
-    <label>Toggle Dark Mode</label>
+    <label for = "darkCheckBox">Toggle Dark Mode</label>
     <input type="checkbox" id="darkCheckBox">
   </div>
 
@@ -180,48 +181,6 @@
       setTimeout(function () {
         notification.style.display = 'none';
       }, 2000); // Adjust the time (in milliseconds) the notification stays visible
-    });
-
-    function toggleDarkMode() {
-      var isDarkMode = document.body.classList.contains('dark-mode');
-
-      //allows the switch
-      document.body.classList.toggle('dark-mode', !isDarkMode);
-
-      //This updates the checkbox depeing on if dark mode is on or off
-      var checkbox = document.getElementById('darkCheckBox');
-      checkbox.checked = !isDarkMode;
-      checkbox.disabled = isDarkMode;
-
-      //makes the toggle dark mode box dark
-      var darkbutton = document.getElementById("darkModeButton")
-      darkbutton.classList.toggle('dark-mode', !isDarkMode);
-
-      //makes the nav dark
-      var darknav = document.getElementById("navBox");
-      darknav.classList.toggle('dark-mode', !isDarkMode);
-
-      // Toggle dark mode class on elements with the homePageBoxes class
-      var darkModeElements = document.querySelectorAll('.homePageBoxes');
-      darkModeElements.forEach(function (element) {
-        element.classList.toggle('dark-mode', !isDarkMode);
-      });
-
-      // Toggle dark mode class on elements with the teabox class
-      var darkModeElements = document.querySelectorAll('.TeaBox');
-      darkModeElements.forEach(function (element) {
-        element.classList.toggle('dark-mode', !isDarkMode);
-      });
-      localStorage.setItem('darkMode', !isDarkMode);
-    }
-
-    //this makes the page dark if it was set to be dark on another page
-    document.addEventListener('DOMContentLoaded', function () {
-      var storedDarkMode = localStorage.getItem('darkMode');
-
-      if (storedDarkMode === 'true') {
-        toggleDarkMode();
-      }
     });
   </script>
 </body>

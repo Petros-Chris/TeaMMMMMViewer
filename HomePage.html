@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="styling.css">
+    <script src="CommonScriptHolder.js"></script>
 
     <div id="navBox">
         <a href="HomePage.html" class="navLink">Home</a>
@@ -18,15 +19,15 @@
 
 <body>
     <div id="welcomeBox" class="homePageBoxes">
-        <h1 class = "darkText">Welcome!</h1>
-        <h4 id="teaFact" class = "darkText"></h4>
+        <h1 class="darkText">Welcome!</h1>
+        <h4 id="teaFact" class="darkText"></h4>
 
-        <h2 id="quizTaker" class = "darkText">Take The Quiz Now To Receive Up To 15% Off Your Next Order</h2>
+        <h2 id="quizTaker" class="darkText">Take The Quiz Now To Receive Up To 15% Off Your Next Order</h2>
 
         <img src="takeTheQuiz.gif" id="takeTheQuiz" alt="Gif to convince viewer to click the quiz button"> <br>
 
-        <button id="quizButton" class = "darkBtn" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
-        <button id="catalogueButton" class = "darkBtn" onclick="goToCatalog()">Browse Catalogue Instead</button>
+        <button id="quizButton" class="darkBtn" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
+        <button id="catalogueButton" class="darkBtn" onclick="goToCatalog()">Browse Catalogue Instead</button>
     </div>
 
     <div id="theWorldOfTeaBox" class="homePageBoxes darkText">
@@ -52,42 +53,32 @@
     </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
-        <label class = "darkText">Toggle Dark Mode</label>
+        <label for="darkCheckBox" class="darkText">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
     <script>
-        var teaFacts = [
-            "Did you know that tea is believed to have originated in China over 5,000 years ago?",
-            "Did you know that after water, tea is the most widely consumed beverage in the world?",
-            "Did you know that the first tea bags were created by accident in the early 20th century?",
-            "Did you know that Herbal infusions, often called 'teas,' are not technically teas?",
-            "Did you know that Green tea and black tea come from the same plant, Camellia sinensis?",
-            "Did you know that The traditional Japanese tea ceremony is a ritual influenced by Zen Buddhism?",
-            "Did you know that Earl Grey tea is flavored with oil from the rind of the bergamot orange?",
-            "Did you know that Oolong tea is partially oxidized, falling between green tea and black tea in processing?",
-            "Did you know that White tea is the least processed of all teas, made from young leaves and buds?",
-            "Did you know that tea leaves contain antioxidants known as catechins, which may have health benefits?",
-            "Did you know that Pu-erh tea, a fermented tea, can be aged for several years, enhancing its flavor?",
-            "Did you know that the temperature and steeping time can affect the flavor of tea; black tea is often steeped in hotter water than green tea?",
-            "Did you know that tea bags were invented in the early 20th century and became popular for their convenience?",
-            "Did you know that tea has been used in traditional medicine for various purposes, including improving digestion and reducing stress?",
-            "Did you know that tea played a significant role in the historical Silk Road trade routes?",
-            "Did you know that the concept of afternoon tea is credited to Anna, the Duchess of Bedford, in 19th-century England?",
-            "Did you know that the term 'chai' simply means 'tea' in many parts of the world?",
-            "Did you know that tea ceremonies are an integral part of cultural traditions in countries like China, Japan, and Korea?",
-            "Did you know that the Camellia sinensis plant is an evergreen shrub or tree that can grow up to 52 feet tall?",
-            "Did you know that tea leaves are often classified based on their size and appearance, leading to different grades of tea?",
-            "Did you know that iced tea became popular in the United States in the early 20th century, especially in the southern states?",
-            "Did you know that in some cultures, tea is an essential part of social gatherings and ceremonies?",
-            "Did you know that tea enthusiasts may use specialized tools, such as tea infusers and teapots, for brewing and enjoying tea?",
-        ];
+
+
+
+        getTeaFacts(function () {
+            displayRandomTeaFact();
+        });
 
         function displayRandomTeaFact() {
             var randomIndex = Math.floor(Math.random() * teaFacts.length);
             document.getElementById('teaFact').innerText = teaFacts[randomIndex];
         }
-        displayRandomTeaFact();
+
+        function getTeaFacts(callMethod) {
+            fetch('QuestionsAndQuotes.json') // Replace with the correct path to your JSON file
+                .then(response => response.json())
+                .then(data => {
+                    teaFacts = data["teaFacts"];
+                    callMethod();
+                })
+                .catch(error => console.error('Error fetching questions:', error));
+        }
 
         function goToCatalog() {
             window.location.href = "Catalog.html";
@@ -96,54 +87,6 @@
             window.location.href = "QuizDifficultyPage.html";
         }
 
-        function toggleDarkMode() {
-            var isDarkMode = document.body.classList.contains('dark');
-
-            //allows the switch
-            document.body.classList.toggle('dark', !isDarkMode);
-
-            //This updates the checkbox depeing on if dark mode is on or off
-            var checkbox = document.getElementById('darkCheckBox');
-            checkbox.checked = !isDarkMode;
-            checkbox.disabled = isDarkMode;
-
-            //makes the toggle dark mode box dark
-            var darkbutton = document.getElementById("darkModeButton")
-            darkbutton.classList.toggle('dark', !isDarkMode);
-
-            //makes the nav dark
-            var darknav = document.getElementById("navBox");
-            darknav.classList.toggle('dark', !isDarkMode);
-
-            //Toggle dark mode class on elements with the homePageBoxes class
-            var darkModeElements = document.querySelectorAll('.homePageBoxes');
-            darkModeElements.forEach(function (element) {
-                element.classList.toggle('dark', !isDarkMode);
-            });
-
-            //Toggle dark mode class on buttons
-            var darkModeBtn = document.querySelectorAll('.darkBtn');
-            darkModeBtn.forEach(function (element) {
-                element.classList.toggle('dark', !isDarkMode);
-            });
-
-            //Toggle dark mode on text
-            var darkModetext = document.querySelectorAll('.darkText');
-            darkModetext.forEach(function (element) {
-                element.classList.toggle('dark', !isDarkMode);
-            });
-
-            localStorage.setItem('darkMode', !isDarkMode);
-        }
-
-        //this makes the page dark if it was set to be dark on another page
-        document.addEventListener('DOMContentLoaded', function () {
-            var storedDarkMode = localStorage.getItem('darkMode');
-
-            if (storedDarkMode === 'true') {
-                toggleDarkMode();
-            }
-        });
     </script>
 </body>
 
