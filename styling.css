@@ -8,7 +8,7 @@ body {
     justify-content: center;
 }
 
-/* All Boxes (Div) */
+/* All Boxes (div) */
 
 .homePageBoxes {
     text-align: center;
@@ -83,6 +83,15 @@ body {
 
 }
 
+.screenBox {
+    width: 900px;
+    height: 500px;
+    top: 20%;
+    background-color: rgb(159, 171, 175);
+    position: absolute;
+    opacity: 1;
+}
+
 .notification {
     display: none;
     background-color: #5cb85c;
@@ -97,7 +106,31 @@ body {
     transition: right 0.5s;
 }
 
+.creditOptionsBtn {
+    width: 100px;
+    height: 30px;
+}
+
+#billingBox {
+    text-align: left;
+    align-items: center;
+    width: 600px;
+}
+
+#costBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 /**/
+.screenBox img {
+    width: 400px;
+    height: 300px;
+    margin-bottom: 20px;
+}
 
 .navLink {
     margin-right: 90px;
@@ -127,7 +160,7 @@ body {
     padding-top: 40px;
 }
 
-#quizButton {
+.defaultButton {
     padding: 10px;
     cursor: pointer;
 }
@@ -193,12 +226,43 @@ body {
     cursor: pointer;
 }
 
+#billingBox label {
+    display: inline-block;
+    text-align: left;
+    min-width: 100px;
+    margin-bottom: 10px;
+}
+
+#summaryTable {
+    margin-top: 40px;
+    width: 200px;
+    text-align: left;
+}
+
+#creditSelector {
+    text-align: center;
+}
+
+#orderButton {
+    width: 200px;
+    border-radius: 10px;
+}
+
+td {
+    font-size: large;
+    padding: 5px;
+}
+
 /* All Speical Effects */
 
-#darkModeButton:hover,
 .homePageBoxes:hover,
 .TeaBox:hover {
     opacity: 1;
+}
+
+#darkModeButton:hover {
+    opacity: 1;
+    right: 10px;
 }
 
 .navLink:link {
@@ -223,20 +287,20 @@ body {
     animation-name: flash;
 }
 
-
 /* All Dark versions */
 
-#darkModeButton {
+#darkModeButton { 
     /* Except this one */
     position: fixed;
     bottom: 20px;
-    right: 20px;
     padding: 10px;
+    right: 10px;
     background-color: #fff;
     border-radius: 20px;
     opacity: 0.7;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out;
     cursor: pointer;
+    overflow: hidden;
 }
 
 #darkModeButton label,
@@ -288,6 +352,18 @@ body {
         opacity: 1;
         width: 500px;
     }
+
+    #billingBox {
+        width: 500px;
+    }
+
+    #darkModeButton {
+        right: -160px;
+    }
+
+    #modeLabel::before {
+        content: '<<< ';
+    }
 }
 
 @media(max-width: 600px) {
@@ -305,5 +381,16 @@ body {
 
 footer{
     color: white; 
-
 }
+
+    #billingBox {
+        width: 400px;
+    }
+
+    #darkModeButton {
+        right: -160px;
+    }
+
+    #modeLabel::before {
+        content: '<<< ';
+    }

@@ -136,7 +136,7 @@ function checkIfLivesExists() {
         });
 
         setTimeout(function () {
-            window.location.href = "HomePage.html";
+            loseScreen();
         }, 1000);
     }
 }
@@ -153,4 +153,23 @@ function deleteImage() {
         checkIfLivesExists();
         break;
     }
+}
+
+// This creates the lose screen when user runs out of lives
+function loseScreen() {
+    var box = document.createElement("div");
+    box.classList.add("screenBox");
+    box.classList.add("homePageBoxes");
+    box.innerHTML = `
+    <h1>You Lost!</h1>
+    <img src = "loseImage.gif" alt = image to show user they lost> <!--https://worstgen.alwaysdata.net/forum/threads/bonney-wont-join-the-sh.32293/page-2 --!>
+    <br> 
+    <button class="defaultButton" onclick = "goHome()">Click me to chicken out</button>`;
+
+    document.body.appendChild(box);
+}
+
+// This allows the user to go back to the home page
+function goHome() {
+    window.location.href = "HomePage.html";
 }

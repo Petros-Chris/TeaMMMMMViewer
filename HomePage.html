@@ -13,7 +13,7 @@
         <a href="HomePage.html" class="navLink">Home</a>
         <a href="Catalog.html" class="navLink">Catalog</a>
         <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
-        <a href="yummy.html" class="navLink">Checkout</a>
+        <a href="BillingPage.html" class="navLink">Checkout</a>
     </div>
 </head>
 
@@ -26,7 +26,7 @@
 
         <img src="takeTheQuiz.gif" id="takeTheQuiz" alt="Gif to convince viewer to click the quiz button"> <br>
 
-        <button id="quizButton" class="darkBtn" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
+        <button class="defaultButton darkBtn" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
         <button id="catalogueButton" class="darkBtn" onclick="goToCatalog()">Browse Catalogue Instead</button>
     </div>
 
@@ -53,7 +53,7 @@
     </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
-        <label for="darkCheckBox" class="darkText">Toggle Dark Mode</label>
+        <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
