@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styling.css">
+    <script src="CommonScriptHolder.js"></script>
+
+    <div id="navBox">
+        <a href="HomePage.html" class="navLink">Home</a>
+        <a href="Catalog.html" class="navLink">Catalog</a>
+        <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
+        <a href="Checkout.html" class="navLink">Checkout</a>
+    </div>
+</head>
+
+<body>
+    <div id="welcomeBox" class="homePageBoxes">
+       
+    </div>
+
+    
+
+    <div id="darkModeButton" onclick="toggleDarkMode()">
+        <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
+        <input type="checkbox" id="darkCheckBox">
+    </div>
+
+    <script>
+      // Retrieve cart items from localStorage
+      const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+      console.log(cartItems); // Display cart items in the console for demonstration
+  
+      // You can then use cartItems as needed on this page
+      // For instance, display them in a list
+      if (cartItems && cartItems.length > 0) {
+        const itemList = document.createElement('ul');
+        cartItems.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${item.name} - $${item.price}`;
+          itemList.appendChild(listItem);
+        });
+        document.body.appendChild(itemList);
+      } else {
+        const noItemsMessage = document.createElement('p');
+        noItemsMessage.textContent = 'No items in the cart.';
+        document.body.appendChild(noItemsMessage);
+      }
+    </script>
+      <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a></footer>
+</body>
+
+</html>

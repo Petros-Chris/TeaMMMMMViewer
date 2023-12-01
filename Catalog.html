@@ -13,7 +13,7 @@
     <a href="HomePage.html" class="navLink">Home</a>
     <a href="Catalog.html" class="navLink">Catalog</a>
     <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
-    <a href="yummy.html" class="navLink">Checkout</a>
+    <a href="Checkout.html" class="navLink">Checkout</a>
   </div>
 </head>
 
@@ -38,7 +38,7 @@
         Minimal processing highlights its purity, making it a choice for those seeking a refined tea experience.</p>
 
       <h3>Type: White</h3>
-      <button class="addCartButton" id="Btn1" value= 54.34 >Add To Cart</button>
+      <button class="addCartButton" id="Btn1" value= 19.99 >Add To Cart</button>
     </div>
 
     <div class="TeaBox">
@@ -51,7 +51,7 @@
         green tea leaves with jasmine blossoms, it offers an elegant and calming experience.</p>
       <h3>Type: Jasmine Green</h3>
 
-      <button class="addCartButton" id="Btn2">Add To Cart</button>
+      <button class="addCartButton" id="Btn2" value= 15.99>Add To Cart</button>
     </div>
 
     <!-- Genmaicha -->
@@ -65,7 +65,7 @@
         rich and aromatic quality to the tea.</p>
 
       <h3>Type: Green</h3>
-      <button class="addCartButton" id="Btn3">Add To Cart</button>
+      <button class="addCartButton" id="Btn3" value= 9.99>Add To Cart</button>
     </div>
 
     <!-- Dong Ding -->
@@ -79,7 +79,7 @@
         undertones.</p>
 
       <h3>Type: Oolong</h3>
-      <button class="addCartButton" id="Btn4">Add To Cart</button>
+      <button class="addCartButton" id="Btn4" value= 13.99>Add To Cart</button>
     </div>
 
     <!-- Golden Monkey -->
@@ -93,7 +93,7 @@
       </p>
 
       <h3>Type: Black</h3>
-      <button class="addCartButton" id="Btn5">Add To Cart</button>
+      <button class="addCartButton" id="Btn5" value= 12.99>Add To Cart</button>
     </div>
 
     <!-- Milk Jin Xuan -->
@@ -107,7 +107,7 @@
         sweet flavor with floral notes.</p>
 
       <h3>Type: Oolong</h3>
-      <button class="addCartButton" id="Btn6">Add To Cart</button>
+      <button class="addCartButton" id="Btn6" value=9.99>Add To Cart</button>
     </div>
 
     <!-- Lao Ban Zhang -->
@@ -121,7 +121,7 @@
         tea trees, Lao Ban Zhang is cherished for its unique character.</p>
 
       <h3>Type: Pu-erh</h3>
-      <button class="addCartButton" id="Btn7">Add To Cart</button>
+      <button class="addCartButton" id="Btn7" value= 12.99>Add To Cart</button>
     </div>
 
     <!-- Organic Grade Matcha -->
@@ -135,7 +135,7 @@
         smooth, creamy texture. Recognized for its high antioxidant content and versatility.</p>
 
       <h3>Type: Green</h3>
-      <button class="addCartButton" id="Btn8">Add To Cart</button>
+      <button class="addCartButton" id="Btn8" value= 24.99>Add To Cart</button>
     </div>
 
     <!-- Huo Shan Huang -->
@@ -149,7 +149,7 @@
         yellowish-green hue and smooth flavor profile make it a sought-after choice.</p>
 
       <h3>Type: Yellow</h3>
-      <button class="addCartButton" id="Btn9">Add To Cart</button>
+      <button class="addCartButton" id="Btn9" value= 9.99>Add To Cart</button>
     </div>
 
     <!-- Sencha -->
@@ -163,7 +163,7 @@
         aroma.</p>
 
       <h3>Type: Green</h3>
-      <button class="addCartButton" id="Btn10">Add To Cart</button>
+      <button class="addCartButton" id="Btn10" value= 10.99>Add To Cart</button>
     </div>
   </div>
 
@@ -175,15 +175,35 @@
   <script>
 
 
-    const addToCartBtn = document.getElementById("Btn1");
+    const addToCartBtn = document.getElementsByClassName("addCartButton");
     const notification = document.getElementById('notification');
 
-    addToCartBtn.addEventListener('click', function () {
+    for (let i = 0; i < addToCartBtn.length; i++) {
+    addToCartBtn[i].addEventListener('click', function () {
       notification.style.display = 'block';
+
+      const selectedTea = {
+        id: addToCartBtn[i].id,
+        name: addToCartBtn[i].parentNode.querySelector('h2').innerText,
+        price: parseFloat(addToCartBtn[i].value)
+      };
+
+      let cartItems = localStorage.getItem('cartItems');
+      if (!cartItems) {
+        cartItems = [];
+      } else {
+        cartItems = JSON.parse(cartItems);
+      }
+
+      cartItems.push(selectedTea);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
       setTimeout(function () {
         notification.style.display = 'none';
-      }, 2000); // Adjust the time (in milliseconds) the notification stays visible
+      }, 2000);
     });
+  }
+  
   </script>
 
   <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a></footer>
