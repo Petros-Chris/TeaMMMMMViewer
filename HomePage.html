@@ -51,6 +51,7 @@
             tea – a simple pleasure that enriches our lives one delightful sip at a time.
         </p>
     </div>
+    <button id = "resetSesh" onclick="clear()">Resetsession(TEMP)</button>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
         <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
@@ -58,9 +59,9 @@
     </div>
 
     <script>
-
-
-
+        function clear() {
+            localStorage.removeItem("discountAmount");
+        }
         getTeaFacts(function () {
             displayRandomTeaFact();
         });

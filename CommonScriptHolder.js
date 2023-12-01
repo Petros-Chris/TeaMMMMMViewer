@@ -52,7 +52,6 @@ window.toggleDarkMode = function () {
     }
 
     localStorage.setItem('darkMode', !isDarkMode);
-    event.stopPropagation();
 }
 
 //this makes the page dark if it was set to be dark on another page
@@ -66,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var questionsAsked = [];
 var counter = 0;
+var difficulty;
 
 // This function is used to display questions during the quiz
 function displayRandomTeaQuestion() {
@@ -79,7 +79,7 @@ function displayRandomTeaQuestion() {
     questionsAsked.push(index);
 
     if (counter++ == 5) {
-        window.location.href = "HomePage.html";
+        winScreen(difficulty);
     }
 
     var currentQuestion = teaQuestions[index];
@@ -157,19 +157,75 @@ function deleteImage() {
 
 // This creates the lose screen when user runs out of lives
 function loseScreen() {
+    var questionBox = document.getElementById("quizDefBox");
+    questionBox.parentNode.removeChild(questionBox);
+
     var box = document.createElement("div");
     box.classList.add("screenBox");
     box.classList.add("homePageBoxes");
     box.innerHTML = `
     <h1>You Lost!</h1>
-    <img src = "loseImage.gif" alt = image to show user they lost> <!--https://worstgen.alwaysdata.net/forum/threads/bonney-wont-join-the-sh.32293/page-2 --!>
+    <img src = "loseImage.webp" alt = image to show user they lost> <!--https://www.dreamstime.com/stock-photo-spilled-cup-tea-table-quarrel-next-to-mug-beautiful-bouquet-flowers-red-gerbera-also-next-to-image54971757 --!>
     <br> 
-    <button class="defaultButton" onclick = "goHome()">Click me to chicken out</button>`;
+    <button class="defaultButton" onclick = "goHome()">Try again later</button>`;
+
+    var storedDarkMode = localStorage.getItem('darkMode');
+
+    document.getElementById("loseOrWin").appendChild(box);
+
+    if (storedDarkMode === 'true') {
+        toggleDarkMode();
+        toggleDarkMode();
+    }
+
+    if (typeof updateTheTimer == "function") {
+        clearInterval(timerInterval);
+    }
+}
+
+// This creates the win screen when the user wins
+function winScreen(difficulty) {
+    var discount = 0;
+    var questionBox = document.getElementById("quizDefBox");
+    questionBox.parentNode.removeChild(questionBox);
+
+    var box = document.createElement("div");
+    box.classList.add("screenBox");
+    box.classList.add("homePageBoxes");
+    box.innerHTML = `
+    <h1>You Won!</h1>
+    <img src = "winImage.jpg" alt = image to show user they won> <!--https://www.pinterest.com/pin/199565827208989906/--!>
+    <br> 
+    <button class="defaultButton" onclick = "goCatalog()">Choose the tea to buy</button>`;
 
     document.body.appendChild(box);
+    var storedDarkMode = localStorage.getItem('darkMode');
+    if (storedDarkMode === 'true') {
+        toggleDarkMode();
+        toggleDarkMode();
+    }
+
+    if (typeof method == "clearInterval(timerInterval)") {
+        clearInterval(timerInterval);
+    }
+
+    if(difficulty === "easy") {
+        alert("yume");
+        discount = 5;
+    }
+    else if (difficulty === "hard") {
+        alert("ymuh");
+        discount = 15;
+    }
+    localStorage.setItem("discountAmount", discount);
 }
 
 // This allows the user to go back to the home page
 function goHome() {
     window.location.href = "HomePage.html";
+}
+
+// This allows the user to go back to the catalog
+function goCatalog() {
+    window.location.href = "Catalog.html";
 }

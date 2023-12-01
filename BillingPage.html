@@ -76,7 +76,7 @@
 
                 <tr>
                     <td>Discount:</td>
-                    <td>$</td>
+                    <td id = "disscount">$</td>
                 </tr>
 
                 <tr>
@@ -131,6 +131,11 @@
         <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
+
+    <script>
+        var discountAmountDouble = localStorage.getItem("discountAmount") / 100;
+        document.getElementById("disscount").innerText = discountAmountDouble;
+    </script>
 </body>
 
 </html>

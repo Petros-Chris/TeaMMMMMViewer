@@ -8,7 +8,9 @@
     <title>Hard Quiz</title>
     <link rel="stylesheet" href="styling.css">
     <script src="CommonScriptHolder.js"></script>
+</head>
 
+<body>
     <div id="lifeBox">
         <p id="lifeText" class="darkText">Life:
             <img id="lifeImage1" class="lifeImage" src=ALife.png alt="^">
@@ -21,86 +23,87 @@
             <a href="yummy.html" class="navLink">Checkout</a>
         </div>
     </div>
-</head>
+    <div id="loseOrWin"></div>
 
-<div id="quizDefBox" class="homePageBoxes darkText">
-    <h1 id="teaQuestionNumber" class="darkText" id = "modeLabel"></h1>
-    <h1 id="teaQuestion" class="darkText"></h1>
+    <div id="quizDefBox" class="homePageBoxes darkText">
+        <h1 id="teaQuestionNumber" class="darkText" id="modeLabel"></h1>
+        <h1 id="teaQuestion" class="darkText"></h1>
 
-    <button id="answer1" class="answerBtn darkBtn" onclick="checkAnswer(0)">
-        <h2></h2>
-    </button>
+        <button id="answer1" class="answerBtn darkBtn" onclick="checkAnswer(0)">
+            <h2></h2>
+        </button>
 
-    <button id="answer2" class="answerBtn darkBtn" onclick="checkAnswer(1)">
-        <h2></h2>
-    </button> <br>
+        <button id="answer2" class="answerBtn darkBtn" onclick="checkAnswer(1)">
+            <h2></h2>
+        </button> <br>
 
-    <button id="answer3" class="answerBtn darkBtn" onclick="checkAnswer(2)">
-        <h2></h2>
-    </button>
+        <button id="answer3" class="answerBtn darkBtn" onclick="checkAnswer(2)">
+            <h2></h2>
+        </button>
 
-    <button id="answer4" class="answerBtn darkBtn" onclick="checkAnswer(3)">
-        <h2></h2>
-    </button> <br>
+        <button id="answer4" class="answerBtn darkBtn" onclick="checkAnswer(3)">
+            <h2></h2>
+        </button> <br>
 
-    <p id="timer">Timer Start!</p>
-</div>
+        <p id="timer">Timer Start!</p>
+    </div>
 
-<div id="darkModeButton" onclick="toggleDarkMode()">
-    <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
-    <input type="checkbox" id="darkCheckBox">
-</div>
+    <div id="darkModeButton" onclick="toggleDarkMode()">
+        <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
+        <input type="checkbox" id="darkCheckBox">
+    </div>
 
-<script>
-    var duration = 10;
-    var timerInterval = setInterval(updateTheTimer, 1000);
+    <script>
+        var difficulty = "hard";
+        var duration = 10;
+        var timerInterval = setInterval(updateTheTimer, 1000);
 
-    function updateTheTimer() {
-        var timer = document.getElementById('timer');
+        function updateTheTimer() {
+            var timer = document.getElementById('timer');
 
-        timer.innerHTML = duration;
+            timer.innerHTML = duration;
 
-        if (duration == 10) {
-            timer.style.color = "lightGreen";
+            if (duration == 10) {
+                timer.style.color = "lightGreen";
+            }
+
+            if (duration == 6) {
+                timer.style.color = "orange";
+            }
+
+            if (duration == 3) {
+                timer.style.color = "red";
+            }
+
+            if (duration === 0) {
+                timer.style.color = "Gray";
+                timer.textContent = "Time's up!";
+                clearInterval(timerInterval);
+
+                setTimeout(function () {
+                    loseScreen();
+                }, 1000);
+            } else {
+                duration--;
+            }
         }
 
-        if (duration == 6) {
-            timer.style.color = "orange";
+        function getQuestions(callMethod) {
+            fetch('QuestionsAndQuotes.json')
+                .then(response => response.json())
+                .then(data => {
+                    teaQuestions = data["hardTeaQuestions"];
+                    callMethod();
+                })
+                .catch(error => console.error('Error fetching questions:', error));
         }
+        getQuestions(function () {
+            displayRandomTeaQuestion();
+        });
 
-        if (duration == 3) {
-            timer.style.color = "red";
-        }
-
-        if (duration === 0) {
-            timer.style.color = "Gray";
-            timer.textContent = "Time's up!";
-            clearInterval(timerInterval);
-
-            setTimeout(function () {
-                window.location.href = "HomePage.html";
-            }, 1000);
-        } else {
-            duration--;
-        }
-    }
-
-    function getQuestions(callMethod) {
-        fetch('QuestionsAndQuotes.json')
-            .then(response => response.json())
-            .then(data => {
-                teaQuestions = data["hardTeaQuestions"];
-                callMethod();
-            })
-            .catch(error => console.error('Error fetching questions:', error));
-    }
-
-    getQuestions(function () {
-        displayRandomTeaQuestion();
-    });
-
-</script>
-<footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a></footer>
-<body>
+    </script>
+    <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
+</body>
 
 </html>
