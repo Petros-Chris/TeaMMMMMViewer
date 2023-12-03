@@ -8,8 +8,6 @@
     <title>Quiz Difficulty</title>
     <link rel="stylesheet" href="styling.css">
     <script src="CommonScriptHolder.js"></script>
-
-
 </head>
 
 <body>
@@ -19,7 +17,7 @@
         <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
         <a href="yummy.html" class="navLink">Checkout</a>
     </div>
-    
+
     <div id="quizDefBox" class="homePageBoxes darkText">
         <h1>What Quiz Difficulty Would You Like?</h1>
 
@@ -33,19 +31,21 @@
 
         <h2>How The Tea Quiz Works:</h2>
         <p class="theWorldOfTea darkText">When you begin the <b>easy version</b> of the quiz, you will start with 3
-            lives, and
-            not have a timer</p>
+            lives, and not have a timer</p>
         <p class="theWorldOfTea darkText">When you begin the <b>hard version</b> of the quiz, you will only have one
-            life,
-            and you will have a 10 second timer</p>
+            life, and you will have a 10 second timer</p>
 
-        <img id="quizdefImage" src="goodLuck.png" alt="To give the viewer confidence">
+        <img id="quizdefImage" src="GeneralImages/goodLuck.png" alt="To give the viewer confidence">
     </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
         <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
+
+    <footer>
+        For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
 
     <script>
         function goToEasyQuiz() {
@@ -55,11 +55,8 @@
         function goToHardQuiz() {
             window.location.href = "HardQuizPage.html";
         }
-
     </script>
-    <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
-    </footer>
 
-    <body>
+</body>
 
 </html>

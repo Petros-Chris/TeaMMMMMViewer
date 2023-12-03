@@ -8,8 +8,6 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="styling.css">
     <script src="CommonScriptHolder.js"></script>
-
-
 </head>
 
 <body>
@@ -19,14 +17,14 @@
         <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
         <a href="BillingPage.html" class="navLink">Checkout</a>
     </div>
-    
+
     <div id="welcomeBox" class="homePageBoxes">
         <h1 class="darkText">Welcome!</h1>
         <h4 id="teaFact" class="darkText"></h4>
 
         <h2 id="quizTaker" class="darkText">Take The Quiz Now To Receive Up To 15% Off Your Next Order</h2>
 
-        <img src="takeTheQuiz.gif" id="takeTheQuiz" alt="Gif to convince viewer to click the quiz button"> <br>
+        <img src="GeneralImages/takeTheQuiz.gif" id="takeTheQuiz" alt="Gif to convince viewer to click the quiz button"> <br>
 
         <button class="defaultButton darkBtn" onclick="goToQuizDef()">Take The Quiz Now</button> <br>
         <button id="catalogueButton" class="darkBtn" onclick="goToCatalog()">Browse Catalogue Instead</button>
@@ -49,23 +47,22 @@
             and conversations. Each sip is a journey, a mini-adventure that transcends the mundane. It's a taste
             of relaxation, a boost for your brain, and a celebration of diverse flavors. In a world that often
             rushes by, tea invites you to pause, savor, and connect. It's not just a beverage; it's a lifestyle,
-            an everyday indulgence that elevates the ordinary into something extraordinary. So, here's to the magic of
+            an everyday indulgence that elevates the ordinary into something extraordinary. So, here's to the magic
+            of
             tea – a simple pleasure that enriches our lives one delightful sip at a time.
         </p>
-        <button id="resetSesh" onclick="clearSession()">Resetsession(TEMP)</button>
     </div>
-
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
         <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
-    <script>
-        function clearSession() {
-            alert(sessionStorage.getItem("discountAmount"));
-        }
+    <footer>
+        For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
 
+    <script>
         getTeaFacts(function () {
             displayRandomTeaFact();
         });
@@ -91,10 +88,7 @@
         function goToQuizDef() {
             window.location.href = "QuizDifficultyPage.html";
         }
-
     </script>
-    <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
-    </footer>
 </body>
 
 </html>

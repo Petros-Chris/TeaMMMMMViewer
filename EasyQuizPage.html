@@ -13,9 +13,9 @@
 <body>
     <div id="lifeBox">
         <p id="lifeText" class="darkText">Lives:
-            <img id="lifeImage1" class="lifeImage" src=ALife.png alt="^">
-            <img id="lifeImage2" class="lifeImage" src=ALife.png alt="^">
-            <img id="lifeImage3" class="lifeImage" src=ALife.png alt="^">
+            <img id="lifeImage1" class="lifeImage" src=GeneralImages/ALife.png alt="^">
+            <img id="lifeImage2" class="lifeImage" src=GeneralImages/ALife.png alt="^">
+            <img id="lifeImage3" class="lifeImage" src=GeneralImages/ALife.png alt="^">
         </p>
 
         <div id="navBox">
@@ -54,13 +54,15 @@
         <input type="checkbox" id="darkCheckBox">
     </div>
 
+    <footer>
+        For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
+
     <script>
         difficulty = "easy";
-        alert(sessionStorage.getItem("discountAmount"));
-        
 
         function getQuestions(callMethod) {
-            fetch('QuestionsAndQuotes.json') // Replace with the correct path to your JSON file
+            fetch('QuestionsAndQuotes.json')
                 .then(response => response.json())
                 .then(data => {
                     teaQuestions = data["easyTeaQuestions"];
@@ -72,10 +74,7 @@
         getQuestions(function () {
             displayRandomTeaQuestion();
         });
-
     </script>
-    <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
-    </footer>
 </body>
 
 </html>

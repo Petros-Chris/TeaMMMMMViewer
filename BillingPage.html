@@ -11,115 +11,130 @@
 </head>
 
 <body>
-    <nav>
-        <div id="navBox">
-            <a href="HomePage.html" class="navLink">Home</a>
-            <a href="Catalog.html" class="navLink">Catalog</a>
-            <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
-            <a href="Checkout.html" class="navLink">Checkout</a>
-        </div>
-    </nav>
+    <div id="navBox">
+        <a href="HomePage.html" class="navLink">Home</a>
+        <a href="Catalog.html" class="navLink">Catalog</a>
+        <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
+        <a href="Checkout.html" class="navLink">Checkout</a>
+    </div>
 
-    <main>
+    <form id="broroooosaodpasjhdpoashbidfopsdgbfcubosdbfl">
         <div id="billingBox" class="homePageBoxes">
-            <h2 class = "darkText" style="text-align: center;">Please Enter Your Billing Information</h2>
+            <h2 class="darkText" style="text-align: center;">Please Enter Your Billing Information</h2>
 
-            <label for="lasNameInput" class = "darkText">LastName:</label>
-            <input id="lasNameInput" class = "darkTextBox" type="text">
-
-            <br>
-
-            <label for="firNameInput">FirstName:</label>
-            <input id="firNameInput" type="text">
+            <label for="lasNameInput" class="darkText">LastName:</label>
+            <input id="lasNameInput" class="darkTextBox" type="text" pattern="[A-Za-z]+"
+                title="Must contain only letters" minlength="2" required>
 
             <br>
 
-            <label for="emailInput">Email:</label>
-            <input id="emailInput" type="text">
+            <label for="firNameInput" class="darkText">FirstName:</label>
+            <input id="firNameInput" class="darkTextBox" type="text" pattern="[A-Za-z]+"
+                title="Must contain only letters" minlength="2" required>
 
-            <h2 style="text-align: center;">Select Payment Method</h2>
+            <br>
+
+            <label for="emailInput" class="darkText">Email:</label>
+            <input id="emailInput" class="darkTextBox" type="email"
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Needs to look like this: adas@fsdf.ca"
+                required>
+
+            <h2 class="darkText" style="text-align: center;">Select Payment Method</h2>
 
             <div id="creditSelector">
-                <button class="creditOptionsBtn"><img class = "cardSelectionImage" src = "visa.jpeg" alt="Visa"></button>
-                <button class="creditOptionsBtn"><img class = "cardSelectionImage" src = "masterCard.png" alt="MasterCard"></button>
-                <button class="creditOptionsBtn"><img class = "cardSelectionImage" src = "googlePay.png" alt="Gpay"></button>
+                <button id="creditOptionBtn1" class="creditOptionsBtn" type="button"><img class="cardSelectionImage"
+                        src="GeneralImages/visa.jpeg" alt="Visa"></button>
+                <button id="creditOptionBtn2" class="creditOptionsBtn" type="button"><img class="cardSelectionImage"
+                        src="GeneralImages/masterCard.png" alt="MasterCard"></button>
+                <button id="creditOptionBtn3" class="creditOptionsBtn" type="button"><img class="cardSelectionImage"
+                        src="GeneralImages/googlePay.png" alt="Gpay"></button>
             </div>
 
             <br> <br>
 
-            <label for="cardName">FullName:</label>
-            <input id="cardName" type="text">
+            <label for="cardName" class="darkText">FullName:</label>
+            <input id="cardName" class="darkTextBox" type="text" pattern="^[a-zA-Z]+ [a-zA-Z]+$"
+                title="Must contain only letters with a space" minlength="2" required>
 
             <br>
 
-            <label for="cardNumber">Card Number:</label>
-            <input id="cardNumber" type="number">
+            <label for="cardNumber" class="darkText">Card Number:</label>
+            <input id="cardNumber" class="darkTextBox" type="text" pattern="^[0-9]+$"
+                title="Must contain atleast 16 numbers" minlength="16" required>
 
             <br>
 
-            <label for="cardCVW">CVW:</label>
-            <input id="cardCVW" type="number">
+            <label for="cardCVV" class="darkText">CVV:</label>
+            <input id="cardCVV" class="darkTextBox" type="Text" pattern="^[0-9]+$"
+                title="Must contain atleast 3 numbers" minlength="3" required>
 
             <br>
 
-            <label for="address">Address:</label>
-            <input id="address" type="text">
+            <label for="address" class="darkText">Address:</label>
+            <input id="address" class="darkTextBox" type="text" pattern="\d+\s+\w+\s+\w+" title="like 123 st fish"
+                required>
 
             <br>
 
-            <label for="postalCode">Postal Code:</label>
-            <input id="postalCode" type="number">
+            <label for="city" class="darkText">City:</label>
+            <input id="city" class="darkTextBox" type="text" pattern="[A-Za-z]+" title="Must be letters" required>
 
             <br>
 
-            <div id=costBox>
-                <table id="summaryTable">
-                    <tr>
-                        <td>Subtotal:</td>
-                        <td>$</td>
-                    </tr>
+            <label for="postalCode" class="darkText">Postal Code:</label>
+            <input id="postalCode" class="darkTextBox" type="text" pattern="^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$"
+                title="has to be like F5N 1H4" minlength="6" required>
+    </form>
+    <br>
 
-                    <tr>
-                        <td>Discount:</td>
-                        <td id="disscount">$</td>
-                    </tr>
+    <div id=costBox>
+        <table id="summaryTable">
+            <tr>
+                <td class="darkText summaryTd">Subtotal:</td>
+                <td class="darkText">$</td>
+            </tr>
 
-                    <tr>
-                        <td>Shipping:</td>
-                        <td>$</td>
-                    </tr>
+            <tr>
+                <td class="darkText summaryTd">Discount:</td>
+                <td class="darkText" id="disscount">$</td>
+            </tr>
 
-                    <tr>
-                        <td>Taxes:</td>
-                        <td>$</td>
-                    </tr>
+            <tr>
+                <td class="darkText summaryTd">Shipping:</td>
+                <td class="darkText">$</td>
+            </tr>
 
-                    <tr>
-                        <td>Total Cost:</td>
-                        <td>$</td>
-                    </tr>
-                </table>
+            <tr>
+                <td class="darkText summaryTd">Taxes:</td>
+                <td class="darkText summaryTd">$</td>
+            </tr>
 
-                <br>
+            <tr>
+                <td class="darkText summaryTd">Total Cost:</td>
+                <td class="darkText summaryTd">$</td>
+            </tr>
+        </table>
 
-                <button id="orderButton">Place Order</button>
-            </div>
-        </div>
-    </main>
+        <br>
 
-    <footer>
-        For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
-    </footer>
+        <button id="orderButton" class="darkBtn" type="submit">Place Order</button>
+    </div>
+    </div>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
         <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
+    <footer>
+        For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
+
     <script>
         var discountAmountDouble = sessionStorage.getItem("discountAmount") / 100;
         document.getElementById("disscount").innerText = discountAmountDouble + " $";
     </script>
+
 </body>
 
 </html>

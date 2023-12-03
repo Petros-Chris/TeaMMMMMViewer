@@ -172,7 +172,7 @@ function loseScreen() {
     box.classList.add("homePageBoxes");
     box.innerHTML = `
     <h1>You Lost!</h1>
-    <img src = "loseImage.webp" alt = image to show user they lost> <!--https://www.dreamstime.com/stock-photo-spilled-cup-tea-table-quarrel-next-to-mug-beautiful-bouquet-flowers-red-gerbera-also-next-to-image54971757 --!>
+    <img src = "GeneralImages/loseImage.webp" alt = image to show user they lost> <!--https://www.dreamstime.com/stock-photo-spilled-cup-tea-table-quarrel-next-to-mug-beautiful-bouquet-flowers-red-gerbera-also-next-to-image54971757 --!>
     <br> 
     <button class="defaultButton" onclick = "goHome()">Try again later</button>`;
 
@@ -201,7 +201,7 @@ function winScreen(difficulty) {
     box.classList.add("homePageBoxes");
     box.innerHTML = `
     <h1>You Won!</h1>
-    <img src = "winImage.jpg" alt = image to show user they won> <!--https://www.pinterest.com/pin/199565827208989906/--!>
+    <img src = "GeneralImages/winImage.jpg" alt = image to show user they won> <!--https://www.pinterest.com/pin/199565827208989906/--!>
     <br> 
     <button class="defaultButton" onclick = "goCatalog()">Choose the tea to buy</button>`;
 

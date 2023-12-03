@@ -13,7 +13,7 @@
 <body>
     <div id="lifeBox">
         <p id="lifeText" class="darkText">Life:
-            <img id="lifeImage1" class="lifeImage" src=ALife.png alt="^">
+            <img id="lifeImage1" class="lifeImage" src=GeneralImages/ALife.png alt="^">
         </p>
 
         <div id="navBox">
@@ -23,6 +23,7 @@
             <a href="yummy.html" class="navLink">Checkout</a>
         </div>
     </div>
+
     <div id="loseOrWin"></div>
 
     <div id="quizDefBox" class="homePageBoxes darkText">
@@ -52,6 +53,10 @@
         <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
+
+    <footer>
+        For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
 
     <script>
         var difficulty = "hard";
@@ -100,10 +105,8 @@
         getQuestions(function () {
             displayRandomTeaQuestion();
         });
-
     </script>
-    <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
-    </footer>
+
 </body>
 
 </html>
