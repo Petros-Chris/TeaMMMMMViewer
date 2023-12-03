@@ -18,7 +18,7 @@
         <a href="Checkout.html" class="navLink">Checkout</a>
     </div>
 
-    <form id="broroooosaodpasjhdpoashbidfopsdgbfcubosdbfl">
+    <form>
         <div id="billingBox" class="homePageBoxes">
             <h2 class="darkText" style="text-align: center;">Please Enter Your Billing Information</h2>
 
@@ -91,27 +91,27 @@
         <table id="summaryTable">
             <tr>
                 <td class="darkText summaryTd">Subtotal:</td>
-                <td class="darkText">$</td>
+                <td class="darkText summaryTd" id = "subTotal">$</td>
             </tr>
 
             <tr>
                 <td class="darkText summaryTd">Discount:</td>
-                <td class="darkText" id="disscount">$</td>
+                <td class="darkText summaryTd" id="disscount">$</td>
             </tr>
 
             <tr>
                 <td class="darkText summaryTd">Shipping:</td>
-                <td class="darkText">$</td>
+                <td class="darkText summaryTd" id="ship">$</td>
             </tr>
 
             <tr>
                 <td class="darkText summaryTd">Taxes:</td>
-                <td class="darkText summaryTd">$</td>
+                <td class="darkText summaryTd" id = "taxes">$</td>
             </tr>
 
             <tr>
                 <td class="darkText summaryTd">Total Cost:</td>
-                <td class="darkText summaryTd">$</td>
+                <td class="darkText summaryTd" id = "cost">$</td>
             </tr>
         </table>
 
@@ -131,8 +131,23 @@
     </footer>
 
     <script>
+        var subTotal = sessionStorage.getItem("total") / 1;
         var discountAmountDouble = sessionStorage.getItem("discountAmount") / 100;
-        document.getElementById("disscount").innerText = discountAmountDouble + " $";
+        var totalDiscountAmount = discountAmountDouble * subTotal;
+        var totalWithDiscount = subTotal - totalDiscountAmount;
+        var totalTax = totalWithDiscount * 0.14975;
+
+        var totalCost = totalWithDiscount +  totalTax + 10;
+
+        document.getElementById("subTotal").innerText = subTotal + " $";
+        document.getElementById("disscount").innerText = totalDiscountAmount.toFixed(2) + " $";
+
+        document.getElementById("taxes").innerText = totalTax.toFixed(2) + " $";
+
+       
+        document.getElementById("ship").innerText = 10 + " $"
+
+        document.getElementById("cost").innerText = totalCost.toFixed(2) + " $";
     </script>
 
 </body>

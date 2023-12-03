@@ -6,7 +6,7 @@
                 "Golden Monkey tea",
                 "Silver Needle tea",
                 "Dragon Well tea",
-                "First Flush Darjeeling tea"
+                "Flush Darjeeling tea"
             ],
             "correctAnswer": 3
         },
@@ -163,10 +163,10 @@
         {
             "question": "Which tea is traditionally hand-tied into a bulb shape that unfurls during steeping, revealing a flower-like appearance?",
             "choices": [
-                "Dragon Pearl Jasmine tea",
-                "Blooming tea",
-                "Ti Kuan Yin tea",
-                "Matcha tea"
+                "Dragon Pearl Jasmine",
+                "Blooming",
+                "Ti Kuan Yin",
+                "Matcha"
             ],
             "correctAnswer": 1
         },
@@ -183,10 +183,10 @@
         {
             "question": "Which Chinese tea is known for its unique processing method involving sun-drying and fermentation?",
             "choices": [
-                "Lychee Red tea",
-                "Qi Dan Cong tea",
+                "Lychee Red",
+                "Qi Dan Cong",
                 "An Ji Bai Cha",
-                "Yue Guang Bai White tea"
+                "Yue Guang Bai White"
             ],
             "correctAnswer": 0
         }

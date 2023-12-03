@@ -3,137 +3,142 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="styling.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="CommonScriptHolder.js"></script>
-
-    <div id="navBox">
-        <a href="HomePage.html" class="navLink">Home</a>
-        <a href="Catalog.html" class="navLink">Catalog</a>
-        <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
-        <a href="Checkout.html" class="navLink">Checkout</a>
-    </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="styling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="CommonScriptHolder.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-<script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <body>
-   
-    </div>
-
-    
-
-    <div id="darkModeButton" onclick="toggleDarkMode()">
-        <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
-        <input type="checkbox" id="darkCheckBox">
-    </div>
-
-    <script>
-      
-      const cartItems = JSON.parse(localStorage.getItem('cartItems'));
-      
-  
-      
-      if (cartItems && cartItems.length > 0) {
-        const itemList = document.createElement('table');
-
-            cartItems.forEach(item => {
-                const newRow = document.createElement('tr');
-                newRow.className = "RowColor";
-
-                const itemImage = document.createElement('td');
-                const image = document.createElement('img');
-                image.src = `Tea Images/${item.name}.jpg`;
-                image.alt = item.name + " Image";
-                image.className = "TeaImages";
-                itemImage.appendChild(image);
-
-                const itemName = document.createElement('td');
-                itemName.textContent = item.name;
-                itemName.classList = "CheckoutList";
-
-                const itemPrice = document.createElement('td');
-                itemPrice.textContent = `$${item.price}`;
-                itemPrice.classList = "CheckoutList";
-
-                const deleteButtonCell = document.createElement('td');
-                const deleteIcon = document.createElement('i');
-                deleteIcon.classList = "CheckoutList";
-                deleteIcon.className = "fa fa-trash trash-icon";
-                
-                
-                deleteIcon.addEventListener('click', function() {
-
-                  const rowIndex = Array.from(this.closest('table').querySelectorAll('tr')).indexOf(this.closest('tr'));
-
-                  
-                  $(this).closest('tr').remove();
-
-                  
-                  cartItems.splice(rowIndex, 1);
-                  localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                  location.reload();
-
-                });
+  <div id="navBox">
+    <a href="HomePage.html" class="navLink">Home</a>
+    <a href="Catalog.html" class="navLink">Catalog</a>
+    <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
+    <a href="Checkout.html" class="navLink">Checkout</a>
+  </div>
 
 
-                newRow.appendChild(itemImage);
-                newRow.appendChild(itemName);
-                newRow.appendChild(itemPrice);
-                newRow.appendChild(deleteIcon);
+  <div id="darkModeButton" onclick="toggleDarkMode()">
+    <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
+    <input type="checkbox" id="darkCheckBox">
+  </div>
 
 
-                itemList.appendChild(newRow);
+  <script>
+
+    const cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
+
+
+
+    if (cartItems && cartItems.length > 0) {
+      const itemList = document.createElement('table');
+
+      cartItems.forEach(item => {
+        const newRow = document.createElement('tr');
+        newRow.className = "RowColor";
+
+        const itemImage = document.createElement('td');
+        itemImage.className = "CheckoutList";
+        const image = document.createElement('img');
+        image.src = `Tea Images/${item.name}.jpg`;
+        image.alt = item.name + " Image";
+        image.className = "TeaImages";
+        itemImage.appendChild(image);
+
+        const itemName = document.createElement('td');
+        itemName.textContent = item.name;
+        itemName.classList = "CheckoutList";
+
+        const itemPrice = document.createElement('td');
+        itemPrice.textContent = `$${item.price}`;
+        itemPrice.classList = "CheckoutList";
+
+        const deleteButtonCell = document.createElement('td');
+        const deleteIcon = document.createElement('i');
+        deleteIcon.className = "fa fa-trash trash-icon";
+        deleteButtonCell.className = "CheckoutList";
+
+        deleteButtonCell.appendChild(deleteIcon);
+
+
+        deleteIcon.addEventListener('click', function () {
+
+          const rowIndex = Array.from(this.closest('table').querySelectorAll('tr')).indexOf(this.closest('tr'));
+
+
+          $(this).closest('tr').remove();
+
+
+          cartItems.splice(rowIndex, 1);
+          sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+          location.reload();
+
         });
 
 
-        document.body.appendChild(itemList);
-
-        const row = document.createElement('tr');
-        row.className = "RowColor";
-        const column = document.createElement('td');
-        column.textContent = "Total: " + calculateTotal();
-        column.classList = "CheckoutList";
-        document.body.appendChild(column);
-        row.appendChild(column);
-        itemList.appendChild(row);
+        newRow.appendChild(itemImage);
+        newRow.appendChild(itemName);
+        newRow.appendChild(itemPrice);
+        newRow.appendChild(deleteButtonCell);
 
 
-        
-        const buttonRow = document.createElement('tr');
-            const buttonCell = document.createElement('td');
-            const billingButton = document.createElement('button');
-            billingButton.textContent = "Proceed to Billing";
-            billingButton.classList = "CheckoutList";
+        itemList.appendChild(newRow);
+      });
 
-            billingButton.addEventListener('click', function() {
-                window.location.href = 'BillingPage.html'; 
-            });
 
-            buttonCell.appendChild(billingButton);
-            buttonRow.appendChild(buttonCell);
-            itemList.appendChild(buttonRow);
-      } else {
-        const noItemsMessage = document.createElement('div');
-        noItemsMessage.classList.add("homePageBoxes");
-        noItemsMessage.classList.add("CheckoutList");
-        noItemsMessage.textContent = 'No items in the cart.';
-        document.body.appendChild(noItemsMessage);
-      }
+      document.body.appendChild(itemList);
 
-      function calculateTotal(){
-       var total = 0;
-        cartItems.forEach(item => {
-           total += parseFloat(item.price);
-        });
-        sessionStorage.setItem("total", total);
-        return total;
+      const row = document.createElement('tr');
+      row.className = "RowColor";
+      const column = document.createElement('td');
+      column.textContent = "Total: " + calculateTotal();
+      column.classList = "CheckoutList";
+      document.body.appendChild(column);
+      row.appendChild(column);
+      itemList.appendChild(row);
 
-      }
-    </script>
-      <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a></footer>
+
+
+      const buttonRow = document.createElement('tr');
+      const buttonCell = document.createElement('td');
+      const billingButton = document.createElement('button');
+      billingButton.textContent = "Proceed to Billing";
+      billingButton.classList.add("darkBtn");
+      billingButton.classList.add("defaultButton");
+      
+      billingButton.addEventListener('click', function () {
+        window.location.href = 'BillingPage.html';
+      });
+
+      buttonCell.appendChild(billingButton);
+      buttonRow.appendChild(buttonCell);
+      itemList.appendChild(buttonRow);
+    } else {
+      const noItemsMessage = document.createElement('div');
+      noItemsMessage.classList.add("homePageBoxes");
+      noItemsMessage.classList.add("CheckoutList");
+      noItemsMessage.textContent = 'No items in the cart.';
+      document.body.appendChild(noItemsMessage);
+    }
+
+    function calculateTotal() {
+      var total = 0;
+      cartItems.forEach(item => {
+        total += parseFloat(item.price);
+      });
+      sessionStorage.setItem("total", total.toFixed(2));
+      return total.toFixed(2);
+
+    }
+  </script>
+
+  <footer>
+    For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+  </footer>
+
 </body>
 
 </html>

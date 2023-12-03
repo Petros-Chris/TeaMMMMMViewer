@@ -56,7 +56,7 @@ body {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    width: 900px;
+    width: 1320px;
     position: relative;
     border-radius: 20px;
     margin-bottom: 20px;
@@ -106,8 +106,6 @@ body {
     transition: right 0.5s;
 }
 
-
-
 #billingBox {
     text-align: left;
     align-items: center;
@@ -128,6 +126,7 @@ body {
 .creditOptionsBtn {
     width: 100px;
     height: 30px;
+    cursor: pointer;
 }
 
 .screenBox img {
@@ -201,10 +200,6 @@ body {
     margin: 5px;
     height: 100px;
     width: 150px;
-    /* Really Werid Bug, dk how to fix :( */
-    /*white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;*/
     cursor: pointer;
     animation-duration: 1s;
 }
@@ -248,7 +243,7 @@ body {
 }
 
 .cardSelectionImage {
-    width:50px;
+    width: 50px;
     height: 25px;
 }
 
@@ -298,7 +293,7 @@ body {
 
 /* All Dark versions */
 
-#darkModeButton { 
+#darkModeButton {
     /* Except this one */
     position: fixed;
     bottom: 20px;
@@ -321,9 +316,10 @@ body {
 #navBox.dark,
 #lifeBox.dark,
 .TeaBox.dark,
-#darkModeButton.dark {
+#darkModeButton.dark,
+.CheckoutList.dark {
     background-color: #222;
-    color: #fff;
+    color: #bdbdbd;
 }
 
 .answerBtn.dark,
@@ -334,9 +330,10 @@ body {
 .darkText.dark {
     color: #bdbdbd;
 }
+
 .darkTextBox.dark {
     background-color: #bdbdbd;
-    color:  #000000;
+    color: #000000;
 }
 
 /* Media Interactly */
@@ -351,6 +348,10 @@ body {
     .homePageBoxes {
         opacity: 1;
         width: 700px;
+    }
+    .TeaPageBoxes {
+        display: block;
+        width: 445px;
     }
 }
 
@@ -377,6 +378,7 @@ body {
     #modeLabel::before {
         content: '<<< ';
     }
+
 }
 
 @media(max-width: 600px) {
@@ -385,11 +387,13 @@ body {
         margin-left: 17px;
         margin-right: 17px;
     }
+
     .homePageBoxes {
         opacity: 1;
         width: 400px;
     }
-        #billingBox {
+
+    #billingBox {
         width: 400px;
     }
 
@@ -400,30 +404,34 @@ body {
     #modeLabel::before {
         content: '<<< ';
     }
+
+    .TeaImages {
+        max-width: 200px;
+    }
+
 }
 
 
-.RowColor{
+.RowColor {
     background-color: antiquewhite;
     margin: 10px;
     padding: 10px;
     position: relative;
     transition: opacity 1s ease;
-    
-}
-
-.CheckoutList{
- font-size: 24px;
 
 }
 
-.trash-icon{
-    margin-top: 75px;
+.CheckoutList {
+    font-size: 24px;
+
+}
+
+.trash-icon {
     font-size: 50px !important;
     color: red;
+    cursor: pointer;
 }
 
 footer {
-    color: white; 
+    color: white;
 }
-

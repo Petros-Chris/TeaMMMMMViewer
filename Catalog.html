@@ -188,7 +188,7 @@
         price: parseFloat(addToCartBtn[i].value)
       };
 
-      let cartItems = localStorage.getItem('cartItems');
+      let cartItems = sessionStorage.getItem('cartItems');
       if (!cartItems) {
         cartItems = [];
       } else {
@@ -196,7 +196,7 @@
       }
 
       cartItems.push(selectedTea);
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
 
       setTimeout(function () {
         notification.style.display = 'none';
