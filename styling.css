@@ -113,6 +113,7 @@ body {
     text-align: left;
     align-items: center;
     width: 600px;
+    padding-top: 10px;
 }
 
 #costBox {
@@ -241,6 +242,11 @@ body {
     text-align: center;
 }
 
+.cardSelectionImage {
+    width:50px;
+    height: 25px;
+}
+
 #orderButton {
     width: 200px;
     border-radius: 10px;
@@ -322,6 +328,10 @@ td {
 
 .darkText.dark {
     color: #bdbdbd;
+}
+.darkTextBox.dark {
+    background-color: #707070;
+    color:  #bdbdbd;
 }
 
 /* Media Interactly */

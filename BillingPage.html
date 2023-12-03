@@ -8,133 +8,117 @@
     <title>Billing</title>
     <link rel="stylesheet" href="styling.css">
     <script src="CommonScriptHolder.js"></script>
-
-    <div id="navBox">
-        <a href="HomePage.html" class="navLink">Home</a>
-        <a href="Catalog.html" class="navLink">Catalog</a>
-        <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
-        <a href="Checkout.html" class="navLink">Checkout</a>
-    </div>
 </head>
 
 <body>
-    <div id="billingBox" class="homePageBoxes">
-        <h2 style="text-align: center;">Please Enter Your Billing Information</h2>
-
-        <label for="lasNameInput">LastName:</label>
-        <input id="lasNameInput" type="text">
-
-        <br>
-
-        <label for="firNameInput">FirstName:</label>
-        <input id="firNameInput" type="text">
-
-        <br>
-
-        <label for="emailInput">Email:</label>
-        <input id="emailInput" type="text">
-
-        <h2 style="text-align: center;">Select Payment Method</h2>
-
-        <div id="creditSelector">
-            <button class = "creditOptionsBtn">Visa</button> <button class = "creditOptionsBtn">OO</button> <button class = "creditOptionsBtn">GPay</button>
+    <nav>
+        <div id="navBox">
+            <a href="HomePage.html" class="navLink">Home</a>
+            <a href="Catalog.html" class="navLink">Catalog</a>
+            <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
+            <a href="Checkout.html" class="navLink">Checkout</a>
         </div>
+    </nav>
 
-        <br> <br>
+    <main>
+        <div id="billingBox" class="homePageBoxes">
+            <h2 class = "darkText" style="text-align: center;">Please Enter Your Billing Information</h2>
 
-        <label for="cardName">FullName:</label>
-        <input id="cardName" type="text">
-
-        <br>
-
-        <label for="cardNumber">Card Number:</label>
-        <input id="cardNumber" type="number">
-
-        <br>
-
-        <label for="cardCVW">CVW:</label>
-        <input id="cardCVW" type="number">
-
-        <br>
-
-        <label for="address">Address:</label>
-        <input id="address" type="text">
-
-        <br>
-
-        <label for="postalCode">Postal Code:</label>
-        <input id="postalCode" type="number">
-
-        <br>
-
-        <div id = costBox>
-            <table id="summaryTable">
-                <tr>
-                    <td>Subtotal:</td>
-                    <td>$</td>
-                </tr>
-
-                <tr>
-                    <td>Discount:</td>
-                    <td id = "disscount">$</td>
-                </tr>
-
-                <tr>
-                    <td>Shipping:</td>
-                    <td>$</td>
-                </tr>
-
-                <tr>
-                    <td>Taxes:</td>
-                    <td>$</td>
-                </tr>
-
-                <tr>
-                    <td>Total Cost:</td>
-                    <td>$</td>
-                </tr>
-            </table>
+            <label for="lasNameInput" class = "darkText">LastName:</label>
+            <input id="lasNameInput" class = "darkTextBox" type="text">
 
             <br>
 
-            <button id = "orderButton">Place Order</button>
-        </div>
-        <!--
-            <div id="costBox">
+            <label for="firNameInput">FirstName:</label>
+            <input id="firNameInput" type="text">
 
-                <label for="subTotOut" class="costLabel">Subtotal: </label>
-                <output id="subTotOut">erf $</output>
+            <br>
 
-                <br>
+            <label for="emailInput">Email:</label>
+            <input id="emailInput" type="text">
 
-                <label for="shipOut" class="costLabel">Shipping: </label>
-                <output id="shipOut">erf $</output>
+            <h2 style="text-align: center;">Select Payment Method</h2>
 
-                <br>
-
-                <label for="taxOut" class="costLabel">Taxes: </label>
-                <output id="taxOut">erf $</output>
-
-                <br>
-
-                <label for="disOut" class="costLabel">Discount: </label>
-                <output id="disOut">erf $</output>
-
-                <br>
-
-                <button>Place Order</button>
+            <div id="creditSelector">
+                <button class="creditOptionsBtn"><img class = "cardSelectionImage" src = "visa.jpeg" alt="Visa"></button>
+                <button class="creditOptionsBtn"><img class = "cardSelectionImage" src = "masterCard.png" alt="MasterCard"></button>
+                <button class="creditOptionsBtn"><img class = "cardSelectionImage" src = "googlePay.png" alt="Gpay"></button>
             </div>
-            -->
-    </div>
+
+            <br> <br>
+
+            <label for="cardName">FullName:</label>
+            <input id="cardName" type="text">
+
+            <br>
+
+            <label for="cardNumber">Card Number:</label>
+            <input id="cardNumber" type="number">
+
+            <br>
+
+            <label for="cardCVW">CVW:</label>
+            <input id="cardCVW" type="number">
+
+            <br>
+
+            <label for="address">Address:</label>
+            <input id="address" type="text">
+
+            <br>
+
+            <label for="postalCode">Postal Code:</label>
+            <input id="postalCode" type="number">
+
+            <br>
+
+            <div id=costBox>
+                <table id="summaryTable">
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td>$</td>
+                    </tr>
+
+                    <tr>
+                        <td>Discount:</td>
+                        <td id="disscount">$</td>
+                    </tr>
+
+                    <tr>
+                        <td>Shipping:</td>
+                        <td>$</td>
+                    </tr>
+
+                    <tr>
+                        <td>Taxes:</td>
+                        <td>$</td>
+                    </tr>
+
+                    <tr>
+                        <td>Total Cost:</td>
+                        <td>$</td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <button id="orderButton">Place Order</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
-        <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
+        <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
     <script>
-        var discountAmountDouble = localStorage.getItem("discountAmount") / 100;
-        document.getElementById("disscount").innerText = discountAmountDouble;
+        var discountAmountDouble = sessionStorage.getItem("discountAmount") / 100;
+        document.getElementById("disscount").innerText = discountAmountDouble + " $";
     </script>
 </body>
 

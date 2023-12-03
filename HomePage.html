@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="styling.css">
     <script src="CommonScriptHolder.js"></script>
 
+
+</head>
+
+<body>
     <div id="navBox">
         <a href="HomePage.html" class="navLink">Home</a>
         <a href="Catalog.html" class="navLink">Catalog</a>
         <a href="QuizDifficultyPage.html" class="navLink">Quiz</a>
         <a href="BillingPage.html" class="navLink">Checkout</a>
     </div>
-</head>
-
-<body>
+    
     <div id="welcomeBox" class="homePageBoxes">
         <h1 class="darkText">Welcome!</h1>
         <h4 id="teaFact" class="darkText"></h4>
@@ -50,18 +52,20 @@
             an everyday indulgence that elevates the ordinary into something extraordinary. So, here's to the magic of
             tea – a simple pleasure that enriches our lives one delightful sip at a time.
         </p>
+        <button id="resetSesh" onclick="clearSession()">Resetsession(TEMP)</button>
     </div>
-    <button id = "resetSesh" onclick="clear()">Resetsession(TEMP)</button>
+
 
     <div id="darkModeButton" onclick="toggleDarkMode()">
-        <label for="darkCheckBox" class="darkText" id = "modeLabel">Toggle Dark Mode</label>
+        <label for="darkCheckBox" class="darkText" id="modeLabel">Toggle Dark Mode</label>
         <input type="checkbox" id="darkCheckBox">
     </div>
 
     <script>
-        function clear() {
-            localStorage.removeItem("discountAmount");
+        function clearSession() {
+            alert(sessionStorage.getItem("discountAmount"));
         }
+
         getTeaFacts(function () {
             displayRandomTeaFact();
         });
@@ -89,7 +93,8 @@
         }
 
     </script>
-      <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a></footer>
+    <footer>For any inquiries, email at <a href="mailto:WeLoveOurCommunitea@gmail.com">WeLoveOurCommunitea@gmail.com</a>
+    </footer>
 </body>
 
 </html>

@@ -42,6 +42,13 @@ window.toggleDarkMode = function () {
         darknav.classList.toggle('dark', !isDarkMode);
     }
 
+    var darkTextBoxes = document.querySelectorAll('.darkTextBox');
+    if (darkTextBoxes) {
+        darkTextBoxes.forEach(function (element) {
+            element.classList.toggle('dark', !isDarkMode);
+        });
+    }
+    
     //Toggle dark mode class on elements with the teabox class
     var darkModeTea = document.querySelectorAll('.TeaBox');
     if (darkModeTea) {
@@ -210,14 +217,12 @@ function winScreen(difficulty) {
     }
 
     if(difficulty === "easy") {
-        alert("yume");
         discount = 5;
     }
     else if (difficulty === "hard") {
-        alert("ymuh");
         discount = 15;
     }
-    localStorage.setItem("discountAmount", discount);
+    sessionStorage.setItem("discountAmount", discount);
 }
 
 // This allows the user to go back to the home page
