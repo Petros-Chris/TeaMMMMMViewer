@@ -67,6 +67,7 @@ body {
     transition: width 0.5s, opacity 0.5s ease-in-out;
 }
 
+
 .TeaBox {
     text-align: center;
     background-color: antiquewhite;
@@ -399,6 +400,27 @@ body {
     #modeLabel::before {
         content: '<<< ';
     }
+}
+
+
+.RowColor{
+    background-color: antiquewhite;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    transition: opacity 1s ease;
+    
+}
+
+.CheckoutList{
+ font-size: 24px;
+
+}
+
+.trash-icon{
+    margin-top: 75px;
+    font-size: 50px !important;
+    color: red;
 }
 
 footer {
