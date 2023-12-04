@@ -19,8 +19,8 @@
     </div>
 
     <div id="purchase"></div>
-    
-    <form id="fillOutForm">
+
+    <form id="fillOutForm" onsubmit="purchaseScreen()">
 
         <div id="billingBox" class="homePageBoxes">
             <h2 class="darkText" style="text-align: center;">Please Enter Your Billing Information</h2>
@@ -152,7 +152,6 @@
 
         document.getElementById("cost").innerText = totalCost.toFixed(2) + " $";
 
-        purchaseScreen();
     </script>
 
 </body>

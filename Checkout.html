@@ -28,10 +28,7 @@
 
 
   <script>
-
     const cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
-
-
 
     if (cartItems && cartItems.length > 0) {
       const itemList = document.createElement('table');
@@ -75,7 +72,6 @@
           cartItems.splice(rowIndex, 1);
           sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
           location.reload();
-
         });
 
 
@@ -83,7 +79,6 @@
         newRow.appendChild(itemName);
         newRow.appendChild(itemPrice);
         newRow.appendChild(deleteButtonCell);
-
 
         itemList.appendChild(newRow);
       });
@@ -108,7 +103,7 @@
       billingButton.textContent = "Proceed to Billing";
       billingButton.classList.add("darkBtn");
       billingButton.classList.add("defaultButton");
-      
+
       billingButton.addEventListener('click', function () {
         window.location.href = 'BillingPage.html';
       });
