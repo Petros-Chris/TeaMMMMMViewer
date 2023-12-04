@@ -338,6 +338,13 @@ body {
 
 /* Media Interactly */
 
+@media(max-width: 1400px) {
+    .TeaPageBoxes {
+        display: flex;
+        width: 880px;
+    }
+}
+
 @media(max-width: 1000px) {
 
     .navLink {

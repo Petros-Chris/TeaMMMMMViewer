@@ -18,7 +18,10 @@
         <a href="Checkout.html" class="navLink">Checkout</a>
     </div>
 
-    <form>
+    <div id="purchase"></div>
+    
+    <form id="fillOutForm">
+
         <div id="billingBox" class="homePageBoxes">
             <h2 class="darkText" style="text-align: center;">Please Enter Your Billing Information</h2>
 
@@ -91,7 +94,7 @@
         <table id="summaryTable">
             <tr>
                 <td class="darkText summaryTd">Subtotal:</td>
-                <td class="darkText summaryTd" id = "subTotal">$</td>
+                <td class="darkText summaryTd" id="subTotal">$</td>
             </tr>
 
             <tr>
@@ -106,12 +109,12 @@
 
             <tr>
                 <td class="darkText summaryTd">Taxes:</td>
-                <td class="darkText summaryTd" id = "taxes">$</td>
+                <td class="darkText summaryTd" id="taxes">$</td>
             </tr>
 
             <tr>
                 <td class="darkText summaryTd">Total Cost:</td>
-                <td class="darkText summaryTd" id = "cost">$</td>
+                <td class="darkText summaryTd" id="cost">$</td>
             </tr>
         </table>
 
@@ -137,17 +140,19 @@
         var totalWithDiscount = subTotal - totalDiscountAmount;
         var totalTax = totalWithDiscount * 0.14975;
 
-        var totalCost = totalWithDiscount +  totalTax + 10;
+        var totalCost = totalWithDiscount + totalTax + 10;
 
         document.getElementById("subTotal").innerText = subTotal + " $";
         document.getElementById("disscount").innerText = totalDiscountAmount.toFixed(2) + " $";
 
         document.getElementById("taxes").innerText = totalTax.toFixed(2) + " $";
 
-       
+
         document.getElementById("ship").innerText = 10 + " $"
 
         document.getElementById("cost").innerText = totalCost.toFixed(2) + " $";
+
+        purchaseScreen();
     </script>
 
 </body>

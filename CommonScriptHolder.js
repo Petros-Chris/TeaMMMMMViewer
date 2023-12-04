@@ -241,3 +241,31 @@ function goHome() {
 function goCatalog() {
     window.location.href = "Catalog.html";
 }
+
+// This creates the lose screen when user runs out of lives
+function purchaseScreen() {
+    var questionBox = document.getElementById("fillOutForm");
+    questionBox.parentNode.removeChild(questionBox);
+
+    var box = document.createElement("div");
+    box.classList.add("screenBox");
+    box.classList.add("homePageBoxes");
+    box.innerHTML = `
+    <h1 class = "darkText">Purchase Has Been Confirmed</h1>
+    <img src = "GeneralImages/loseImage.webp" alt = image to show user they lost> <!--https://www.dreamstime.com/stock-photo-spilled-cup-tea-table-quarrel-next-to-mug-beautiful-bouquet-flowers-red-gerbera-also-next-to-image54971757 --!>
+    <br> 
+    <button class="defaultButton darkBtn" onclick = "goHome()">Thank you from ordering from us</button>`;
+
+    var storedDarkMode = localStorage.getItem('darkMode');
+
+    document.getElementById("purchase").appendChild(box);
+
+    if (storedDarkMode === 'true') {
+        toggleDarkMode();
+        toggleDarkMode();
+    }
+
+    if (typeof updateTheTimer == "function") {
+        clearInterval(timerInterval);
+    }
+}
