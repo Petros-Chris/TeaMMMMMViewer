@@ -1,5 +1,9 @@
 # This is project for internet called TeaMMMMMViewer
 
+<p>Authors: Petros-Chris Giannouleas & Maxim Rotaru</p>
+<p><b>This project requires Visual Studio Code with the Live Server extension</b></p>
+
+<br>
 
 <p align = "center"><b>What Project Is About:</b> </p>
 <p>
